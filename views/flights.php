@@ -21,7 +21,7 @@
       <div class="col-xs-12">
         <p>
           <a class="btn btn-default" data-toggle="collapse" href="#flight-search-filter-container" aria-expanded="false" aria-controls="collapseExample">
-            Filters
+            Filters. Maybe this section shouldn't exist
           </a>
         </p>
         <div class="collapse" id="flight-search-filter-container">
@@ -39,7 +39,7 @@
             <h1 >
               S$830
               <small>
-                EM306 Emirates Airlines
+                Emirates Airlines Economy
               </small>
             </h1>
             <p>
