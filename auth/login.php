@@ -22,7 +22,7 @@ if(array_key_exists("ac", $_POST)){
                /// check if submitted username and password exist in $USERS array.
                /// set "logged" attribute of $_SESSION as user name and redirect to readblogs.php
                     $_SESSION["logged"]=$_POST["username"]; 
-                    /// header("Location: ../view/readblogs.php"); 
+                    header("Location: ../views/index.php"); 
                } else { 
                     echo 'Incorrect password. Please, try again.'; 
                }; 
@@ -65,8 +65,8 @@ if(array_key_exists("logged", $_SESSION)){
 </div><br />
 <div id="footer"></div>
 <script>
-  $("#header").load("../view/common/header.php"); 
-  $("#footer").load("../view/common/footer.php"); 
+  ///$("#header").load("../view/common/header.php"); 
+  ///$("#footer").load("../view/common/footer.php"); 
 </script> 
 </body>
 </html>
