@@ -63,7 +63,29 @@ $sth = oci_parse($dbh, $sql);
 oci_execute($sth, OCI_DEFAULT);
 
 
+//////////////////////////////////////////////////////////////////////////////////////// Adding Seed Values for Testing
 
+
+
+// insert dummy user
+              $sql = "INSERT INTO website_user VALUES ('anand@something.com', 'password', 'token', '1')";
+$sth = oci_parse($dbh, $sql);
+oci_execute($sth, OCI_DEFAULT);
+
+
+// insert dummy airline
+              $sql = "INSERT INTO airline VALUES ('9W', 'Jet Airways', 'some logo')";
+$sth = oci_parse($dbh, $sql);
+oci_execute($sth, OCI_DEFAULT);
+
+$sql = "ALTER SESSION SET nls_date_format='yyyy-mm-dd'";
+$sth = oci_parse($dbh, $sql);
+oci_execute($sth, OCI_DEFAULT);
+
+// insert dummy flight
+$sql = "INSERT INTO flight VALUES ('9W343', 'Mumbai', 'Singapore', '2015-05-10', '2015-06-10', '200', 'ON TIME', 'anand@something.com', '400', '9W')";
+$sth = oci_parse($dbh, $sql);
+oci_execute($sth, OCI_DEFAULT);
 
 
 
