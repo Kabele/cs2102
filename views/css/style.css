@@ -4,7 +4,7 @@ img.logo{
 	height: 30px;
 }
 
-#rectangle{
+.bigRectangle{
 	margin-top: 25px;
 	margin-left: 20px;
     width: 300px;
@@ -32,4 +32,28 @@ img.logo{
 	font-size: 50px;
 	margin-top: 150px;
 	color: red;
+}
+
+.smallRectangle {
+	margin-top: 20px;
+	margin-left: 50px;
+	width: 300px;
+	height: 30px;
+	background-color: #F0ECA2;
+	border-radius: 10px;
+}
+
+.mediumRectangle {
+	margin-top: 20px;
+	margin-left: 50px;
+	width: 300px;
+	height: 250px;
+	background-color: #FDFDCC;
+	border-radius: 10px;
+}
+
+li { border-bottom: 1px solid #000000; }
+
+.last {
+	border-bottom: 0px solid #000000;
 }
