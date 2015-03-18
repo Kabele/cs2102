@@ -22,8 +22,8 @@ $status_changed_by = $_POST["status_changed_by"];
 $price = $_POST["price"];
 $airline_code = $_POST["airline_code"];
 
-$sql = "INSERT INTO flight VALUES('".$flight_id."', '".$departure."', '".$arrival."', '".$departure_date."', '".$arrival_date."', '".$passenger_limit."', '".$status."', '".
-	$status_changed_by."', '".$price."', '".$airline_code."')";
+$sql = "UPDATE flight SET departure = '".$departure."', arrival = '".$arrival."', departure_date = '".$departure_date."', arrival_date = '".$arrival_date."', passenger_limit = '".$passenger_limit."', status = '".$status."', status_changed_by = '".
+	$status_changed_by."', price = '".$price."', airline_code = '".$airline_code."' WHERE flight_id = '".$flight_id."' AND departure_date = '". $departure_date."'";
 
 
 $sth = oci_parse($dbh, $sql);
