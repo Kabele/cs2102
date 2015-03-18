@@ -3,3 +3,33 @@ img.logo{
 	width: 30px;
 	height: 30px;
 }
+
+#rectangle{
+	margin-top: 25px;
+	margin-left: 20px;
+    width: 300px;
+    height: 500px;
+    background: #001855;
+    border-radius: 20px;
+}
+
+.flightSearchBox {
+	font-family: georgia;
+	color: white; 
+}
+
+.centerAlign {
+	text-align: center;
+}
+
+.searchButton {
+	width: 100px;
+	background-color: gray;
+	height: 40px;
+}
+
+#timedMsgDiv {
+	font-size: 50px;
+	margin-top: 150px;
+	color: red;
+}
