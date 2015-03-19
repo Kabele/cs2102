@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <title>Discount Airlines</title>
+  <link rel="css/bootstrap.min.css">
   <?php include( "partials/meta.php" ); ?>
   <?php include( "partials/styles.php" ); ?>
   <?php include( "partials/scripts.php" ); ?>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 </head>
 <body>
   <?php include( "partials/navbar.php" ); ?>
@@ -17,38 +17,40 @@
           <div class="flightSearchBox">
             <hr style="height: 3px; visibility:hidden;" />
             <h3 class="centerAlign">Search for Flights!</h3>
-            <input style="margin-left: 20px; margin-top: 10px;" type="radio" name="type" value="one-way"> ONE WAY &nbsp; &nbsp; &nbsp;
-            <input type="radio" name="type" value="round" checked> ROUND TRIP
-            <br>
-            <br>
-            <p style="margin-left: 20px;">FROM</p>
-            <select id="countryFrom" name="country" style="margin-left: 20px; width: 200px;"></select>
-            <br>
-            <br>
-            <p style="margin-left: 20px;">TO</p>
-            <select id="countryTo" name="country" style="margin-left: 20px; width: 200px;"></select>
-            <br>
-            <br>
-            <p style="margin-left: 20px;">DEPARTURE</p>
-            <select id="departuredaydropdown" style="margin-left: 20px;"></select> 
-            <select id="departuremonthdropdown"></select> 
-            <select id="departureyeardropdown"></select>
-            <br>
-            <br>
-            <p style="margin-left: 20px;">RETURN</p>
-            <select id="returndaydropdown" style="margin-left: 20px;"></select> 
-            <select id="returnmonthdropdown"></select> 
-            <select id="returnyeardropdown"></select>
-            <br>
-            <br>
-            <p style="margin-left: 20px; display: inline">ADULT</p> &nbsp;
-            <p style="margin-left: 20px; display: inline">CHILD</p>
-            <br>
-            <select id="noofadult" style="margin-left: 20px;"></select>
-            <select id="noofchild" style="margin-left: 40px;"></select>
-            <br>
-            <br>
-            <button onclick="document.location.href='./flights.php'" style="margin-left: 20px;" class="searchButton" type="button">Search</button>
+            <form id="flightInfo" action="flights.php">
+              <input style="margin-left: 20px; margin-top: 10px;" type="radio" name="flightType" value="one-way"> ONE WAY &nbsp; &nbsp; &nbsp;
+              <input type="radio" name="flightType" value="round" checked> ROUND TRIP
+              <br>
+              <br>
+              <p style="margin-left: 20px;">FROM</p>
+              <select id="countryFrom" name="countryFrom" style="margin-left: 20px; width: 200px;"></select>
+              <br>
+              <br>
+              <p style="margin-left: 20px;">TO</p>
+              <select id="countryTo" name="countryTo" style="margin-left: 20px; width: 200px;"></select>
+              <br>
+              <br>
+              <p style="margin-left: 20px;">DEPARTURE</p>
+              <select id="departuredaydropdown" name="departureday" style="margin-left: 20px;"></select> 
+              <select id="departuremonthdropdown" name="departuremonth"></select> 
+              <select id="departureyeardropdown" name="departureyear"></select>
+              <br>
+              <br>
+              <p style="margin-left: 20px;">RETURN</p>
+              <select id="returndaydropdown" name="returnday" style="margin-left: 20px;"></select> 
+              <select id="returnmonthdropdown" name="returnmonth"></select> 
+              <select id="returnyeardropdown" name="returnyear"></select>
+              <br>
+              <br>
+              <p style="margin-left: 20px; display: inline">ADULT</p> &nbsp;
+              <p style="margin-left: 20px; display: inline">CHILD</p>
+              <br>
+              <select id="noofadult" name="noofadults" style="margin-left: 20px;"></select>
+              <select id="noofchild" name="noofchildren" style="margin-left: 40px;"></select>
+              <br>
+              <br>
+              <button style="margin-left: 20px;" class="searchButton" type="submit">Search</button>
+            </form>
           </div>
         </div>
       </div>
