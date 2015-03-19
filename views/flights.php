@@ -40,6 +40,14 @@
 
             <?php
 
+            $type = $_POST["flightType"];
+            $departure = $_POST["countryFrom"];
+            $arrival = $_POST["countryTo"];
+            $departure_date = $POST["departureyear"."-"."departuremonth"."-"."departureday"];
+            $arrival_date = $POST["returnyear"."-"."returnmonth"."-"."returnday"];
+            $adults = $POST["noofadults"];
+            $children = $POST["noofchildren"];
+
             putenv("ORACLE_HOME=/oraclient");
 $dbh = ocilogon('cs2102t01', 'crse1420', ' (DESCRIPTION =
     (ADDRESS_LIST =
