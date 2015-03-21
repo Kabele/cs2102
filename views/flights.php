@@ -40,7 +40,10 @@
               </div>
             </div>
           </li>
-        </ol> 
+        </ol>
+        <a href="/flights/create.php" class="btn btn-primary">
+          Create New Flight
+        </a>
       </div>
     </div>
   </div>
