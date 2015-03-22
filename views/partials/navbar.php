@@ -20,8 +20,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="/">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="/">About</a></li>
-        <li><a href="/">Contact</a></li>
+        <li><a href="/users/profile.php">Profile</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <strong class="caret"></strong></a>
           <ol class="dropdown-menu">
@@ -31,7 +30,7 @@
           </ol>
         </li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">    
+      <ul class="nav navbar-nav navbar-right"> 
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
           <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
