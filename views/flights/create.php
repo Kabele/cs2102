@@ -18,13 +18,13 @@
 			</div>
 			<div class="row">
 				<div class="col-xs-12">
-					<form action="" class="form-horizontal">
+					<form action="new.php" method="post" class="form-horizontal">
 						<div class="form-group">
 							<label for="flightid-container" class="col-sm-6 col-xs-12 control-label">
 							Flight Code
 							</label>
 							<div class="col-sm-6 col-xs-12">
-								<input type="text" class="form-control" id="flightid-container" placeholder="MI467">
+								<input type="text" name="flight_id" class="form-control" id="flightid-container" placeholder="MI467">
 							</div>
 						</div>
 						<div class="form-group">
@@ -32,7 +32,7 @@
 							Departing Airport
 							</label>
 							<div class="col-sm-6 col-xs-12">
-								<input type="text" class="form-control" id="depart-container" placeholder="SIN - Changi Intl Airport">
+								<input type="text" name="departure" class="form-control" id="depart-container" placeholder="SIN - Changi Intl Airport">
 							</div>
 						</div>
 						<div class="form-group">
@@ -40,7 +40,7 @@
 							Departing Date/Time
 							</label>
 							<div class="col-sm-6 col-xs-12">
-								<input type="datetime-local" class="form-control" id="departtime-container">
+								<input type="datetime-local" name="departure_date" class="form-control" id="departtime-container">
 							</div>
 						</div>
 						<div class="form-group">
@@ -48,7 +48,7 @@
 							Arriving Airport
 							</label>
 							<div class="col-sm-6 col-xs-12">
-								<input type="text" class="form-control" id="arrive-container" placeholder="COK - Kochi Intl Airport">
+								<input type="text" class="form-control" name="arrival" id="arrive-container" placeholder="COK - Kochi Intl Airport">
 							</div>
 						</div>
 						<div class="form-group">
@@ -56,7 +56,7 @@
 							Arriving Date/Time
 							</label>
 							<div class="col-sm-6 col-xs-12">
-								<input type="datetime-local" class="form-control" id="arrivetime-container">
+								<input type="datetime-local" name="arrival_date" class="form-control" id="arrivetime-container">
 							</div>
 						</div>
 						<div class="form-group">
@@ -64,7 +64,7 @@
 							Total number of passengers
 							</label>
 							<div class="col-sm-6 col-xs-12">
-								<input type="number" class="form-control" id="passlimit-container" min="1" value="100">
+								<input type="number" class="form-control" name="passenger_limit" id="passlimit-container" min="1" value="100">
 							</div>
 						</div>
 						<div class="form-group">
@@ -72,7 +72,7 @@
 							Price per Seat
 							</label>
 							<div class="col-sm-6 col-xs-12">
-								<input type="number" class="form-control" id="price-container" min="0" value="0">
+								<input type="number" class="form-control" name="price" id="price-container" min="0" value="0">
 							</div>
 						</div>
 						<div class="form-group">
@@ -80,10 +80,10 @@
 							Operating Airlines	
 							</label>
 							<div class="col-sm-6 col-xs-12">
-								<select name="" id="" class="form-control">
+								<select name="airline_code" id="" class="form-control">
 									<option value="SilkAir">SilkAir</option>
 									<option value="Emirates">Emirates</option>
-									<option value="Tiger Airways">Tiger Airways</option>
+									<option value="9W">Jet Airways</option>
 								</select>
 							</div>
 						</div>
