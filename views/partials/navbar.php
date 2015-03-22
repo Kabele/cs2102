@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="/">
-        <img alt="Brand" class="logo" src="/images/logo.png">
+        <img alt="Brand" class="logo" src="/views/images/logo.png">
       </a>
       <a class="navbar-brand" href="/">
         Discount Airlines
