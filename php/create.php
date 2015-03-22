@@ -1,6 +1,8 @@
 <?php
 
-require_once 'connect.php'; // your PHP script(s) can access this, but the rest cannot
+$path = $_SERVER['DOCUMENT_ROOT'] . "/";
+
+require_once $path.'php/connect.php'; // your PHP script(s) can access this, but the rest cannot
 // prepare
 
 $sql = "CREATE TABLE website_user (
