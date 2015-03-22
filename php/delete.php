@@ -1,45 +1,31 @@
 <?php
 
-// connect and set option
-putenv("ORACLE_HOME=/oraclient");
-$dbh = ocilogon('cs2102t01', 'crse1420', ' (DESCRIPTION =
-    (ADDRESS_LIST =
-      (ADDRESS = (PROTOCOL = TCP)(HOST = sid3.comp.nus.edu.sg)(PORT = 1521))
-    )
-    (CONNECT_DATA =
-      (SERVICE_NAME = sid3.comp.nus.edu.sg)
-    )
-  )');
+require_once 'connect.php'; 
 
 // prepare
-$sql = "DROP table passenger";
-$sth = oci_parse($dbh, $sql);
-oci_execute($sth, OCI_DEFAULT);
+$sql = "DROP table passenger;";
 
-$sql = "DROP table booking";
-$sth = oci_parse($dbh, $sql);
-oci_execute($sth, OCI_DEFAULT);
-
-$sql = "DROP table flight";
-$sth = oci_parse($dbh, $sql);
-oci_execute($sth, OCI_DEFAULT);
-
-$sql = "DROP table airline";
-$sth = oci_parse($dbh, $sql);
-oci_execute($sth, OCI_DEFAULT);
+$db->query($sql);
 
 
-$sql = "DROP table website_user";
-$sth = oci_parse($dbh, $sql);
-oci_execute($sth, OCI_DEFAULT);
+$sql = "DROP table booking;";
+
+$db->query($sql);
+
+$sql = "DROP table flight;";
+
+$db->query($sql);
 
 
+$sql = "DROP table airline;";
+
+$db->query($sql);
 
 
+$sql = "DROP table website_user;";
+
+$db->query($sql);
 
 
-
-
-ocilogoff($dbh)
 
 ?>
