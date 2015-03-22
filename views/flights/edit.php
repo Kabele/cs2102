@@ -22,3 +22,5 @@ $sql = "UPDATE flight SET departure = '".$departure."', arrival = '".$arrival."'
 $db->query($sql);
 
 ?>
+
+<?php include( $path . "views/flights.php" ); ?>      

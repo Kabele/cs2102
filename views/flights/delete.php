@@ -14,3 +14,5 @@ $sql = "DELETE FROM flight WHERE flight_id = '".$flight_id."' AND departure_date
 $db->query($sql);
 
 ?>
+
+<?php include( $path . "views/flights.php" ); ?>      
