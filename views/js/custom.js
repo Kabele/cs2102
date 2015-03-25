@@ -82,16 +82,20 @@ function checkInput() {
     var returnMonth = document.getElementById("returnmonthdropdown").selectedIndex;
     var returnDay = document.getElementById("returndaydropdown").value;
 
-    if (departureYear > returnYear) {
-        document.getElementById("returnText").innerHTML = " Please check the dates!";
-        everythingOk = 0;
-    } else if (departureYear == returnYear && departureMonth > returnMonth){
-        document.getElementById("returnText").innerHTML = " Please check the dates!";
-        everythingOk = 0;
-    }  else if (departureYear == returnYear && departureMonth == returnMonth && departureDay > returnDay){
-        document.getElementById("returnText").innerHTML = " (Please check the dates!)";
-        everythingOk = 0;
-    } else {document.getElementById("returnText").innerHTML = "";}
+    var roundTrip = document.getElementById("roundTrip").value;
+
+    if (document.getElementById("roundTrip").checked) {
+        if (departureYear > returnYear) {
+            document.getElementById("returnText").innerHTML = " Please check the dates!";
+            everythingOk = 0;
+        } else if (departureYear == returnYear && departureMonth > returnMonth){
+            document.getElementById("returnText").innerHTML = " Please check the dates!";
+            everythingOk = 0;
+        }  else if (departureYear == returnYear && departureMonth == returnMonth && departureDay > returnDay){
+            document.getElementById("returnText").innerHTML = " (Please check the dates!)";
+            everythingOk = 0;
+        } else {document.getElementById("returnText").innerHTML = "";}
+    }
 
     var adult = document.getElementById("noofadult").value;
     var child = document.getElementById("noofchild").value;

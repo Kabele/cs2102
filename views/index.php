@@ -19,7 +19,7 @@
             <h3 class="centerAlign">Search for Flights!</h3>
             <form id="flightInfo" action="flights.php">
               <input style="margin-left: 20px; margin-top: 10px;" type="radio" name="flightType" value="one-way"> ONE WAY &nbsp; &nbsp; &nbsp;
-              <input type="radio" name="flightType" value="round" checked> ROUND TRIP
+              <input id="roundTrip" type="radio" name="flightType" value="round" checked> ROUND TRIP
               <br>
               <br>
               <p style="margin-left: 20px; display: inline;">FROM<p id="fromText" style="color: red; display: inline;"></p></p>
