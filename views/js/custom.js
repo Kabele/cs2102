@@ -56,7 +56,55 @@ function init() {
     var t=setInterval("timedMsg()",4000);
 };
 
+function checkInput() {
+    var everythingOk = 1;
 
+    var countryFrom = document.getElementById("countryFrom").value;
+    var countryTo = document.getElementById("countryTo").value;
+
+    if (countryFrom == -1) {
+        document.getElementById("fromText").innerHTML = "  (Choose a country)";
+        everythingOk = 0;
+    } else {document.getElementById("fromText").innerHTML = "";}
+    if (countryTo == -1) {
+        document.getElementById("toText").innerHTML = "  (Choose a country)";
+        everythingOk = 0;
+    } else if (countryFrom == countryTo) {
+        document.getElementById("toText").innerHTML = "  (Choose a different country)";
+        everythingOk = 0;
+    } else {document.getElementById("fromText").innerHTML = "";}
+
+    var departureYear = document.getElementById("departureyeardropdown").value;
+    var departureMonth = document.getElementById("departuremonthdropdown").selectedIndex;
+    var departureDay = document.getElementById("departuredaydropdown").value;
+
+    var returnYear = document.getElementById("returnyeardropdown").value;
+    var returnMonth = document.getElementById("returnmonthdropdown").selectedIndex;
+    var returnDay = document.getElementById("returndaydropdown").value;
+
+    if (departureYear > returnYear) {
+        document.getElementById("returnText").innerHTML = " Please check the dates!";
+        everythingOk = 0;
+    } else if (departureYear == returnYear && departureMonth > returnMonth){
+        document.getElementById("returnText").innerHTML = " Please check the dates!";
+        everythingOk = 0;
+    }  else if (departureYear == returnYear && departureMonth == returnMonth && departureDay > returnDay){
+        document.getElementById("returnText").innerHTML = " (Please check the dates!)";
+        everythingOk = 0;
+    } else {document.getElementById("returnText").innerHTML = "";}
+
+    var adult = document.getElementById("noofadult").value;
+    var child = document.getElementById("noofchild").value;
+
+    if (adult == 0 && child == 0) {
+        document.getElementById("people").innerHTML = " (How many people?)";
+        everythingOk = 0;
+    } else {document.getElementById("people").innerHTML = "";}
+
+    if (everythingOk) {
+        document.getElementById("flightInfo").submit();
+    }
+}
 
 
 

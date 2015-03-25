@@ -22,11 +22,11 @@
               <input type="radio" name="flightType" value="round" checked> ROUND TRIP
               <br>
               <br>
-              <p style="margin-left: 20px;">FROM</p>
+              <p style="margin-left: 20px; display: inline;">FROM<p id="fromText" style="color: red; display: inline;"></p></p>
               <select id="countryFrom" name="countryFrom" style="margin-left: 20px; width: 200px;"></select>
               <br>
               <br>
-              <p style="margin-left: 20px;">TO</p>
+              <p style="margin-left: 20px; display: inline;">TO<p id="toText" style="color: red; display: inline;"></p></p>
               <select id="countryTo" name="countryTo" style="margin-left: 20px; width: 200px;"></select>
               <br>
               <br>
@@ -36,7 +36,7 @@
               <select id="departureyeardropdown" name="departureyear"></select>
               <br>
               <br>
-              <p style="margin-left: 20px;">RETURN</p>
+              <p style="margin-left: 20px; display: inline;">RETURN<p id="returnText" style="color: red; display: inline;"></p></p>
               <select id="returndaydropdown" name="returnday" style="margin-left: 20px;"></select> 
               <select id="returnmonthdropdown" name="returnmonth"></select> 
               <select id="returnyeardropdown" name="returnyear"></select>
@@ -44,12 +44,13 @@
               <br>
               <p style="margin-left: 20px; display: inline">ADULT</p> &nbsp;
               <p style="margin-left: 20px; display: inline">CHILD</p>
+              <p id="people" style="color: red; display: inline;"></p>
               <br>
               <select id="noofadult" name="noofadults" style="margin-left: 20px;"></select>
               <select id="noofchild" name="noofchildren" style="margin-left: 40px;"></select>
               <br>
               <br>
-              <button style="margin-left: 20px;" class="searchButton" type="submit">Search</button>
+              <button style="margin-left: 20px;" onclick="checkInput()" class="searchButton" type="button">Search</button>
             </form>
           </div>
         </div>
