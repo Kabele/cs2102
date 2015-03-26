@@ -8,7 +8,8 @@
 	<?php include( $path . "views/partials/scripts.php" ); ?>
 </head>
 <body>
-	<?php include( $path . "views/partials/navbar.php" ); ?>
+	<?php include( $path . "views/partials/navbar.php" ); 
+	require_once $path.'php/connect.php'; ?>
 	<div class="container">
 		<div class="well">
 			<div class="row">
@@ -81,6 +82,17 @@
 							</label>
 							<div class="col-sm-6 col-xs-12">
 								<select name="airline_code" id="" class="form-control">
+									<?php 
+									$sql = "SELECT a.airline_code, a.name FROM airline a;";
+
+          							$res = $db->query($sql);
+
+          							while ($row = mysqli_fetch_assoc($res)) { 
+          								echo '<option value="'.$row['airline_code'].'">'.$row['name'].'</option>';
+          							}
+
+
+          							?>
 									<option value="SilkAir">SilkAir</option>
 									<option value="Emirates">Emirates</option>
 									<option value="9W">Jet Airways</option>
