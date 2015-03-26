@@ -1,7 +1,7 @@
 <?php
-session_start();
-$email =  $_SESSION['email'];
-$pwd =  $_SESSION['pwd'];
+
+$email = $_GET["_email"];
+
 
 $servername = 'localhost';
     $username = 'root';
@@ -15,15 +15,7 @@ $servername = 'localhost';
          die("Connection failed: " . $conn->connect_error);
     } 
 
-    $sql = "UPDATE website_user SET password = '".$pwd."' WHERE email='".$email."'";
-      
-
+    $sql = "UPDATE website_user SET is_admin = '0' WHERE email='".$email."'";
     $result = $conn->query($sql);
-    
-
-
-
 
 ?>
-<label>Successfully changed password</label>
-

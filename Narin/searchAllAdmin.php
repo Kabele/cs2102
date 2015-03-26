@@ -37,13 +37,14 @@
         ?>
             <tr>
             <td><?php echo $row['email'] ?> </td>
-            <td> <?php echo $row['pasword'] ?> </td>
+            <td> <?php echo $row['password'] ?> </td>
             <td> <?php echo $row['auth_token'] ?> </td>
             <td> <?php echo $row['is_admin'] ?> </td>
             
 
             <td><input type ="button" class="delete" id= "<?php echo $row['email'] ?>" value="Delete"/></td>
             <td><input type ="button" class="edit" id= "<?php echo $row['email'] ?>" value="Edit"/></td>
+            <td><input type ="button" class="convert" id= "<?php echo $row['email'] ?>" value="Make Normal"/></td>
         </tr>
             <?php
         }
@@ -81,6 +82,22 @@
 
           );
              var url = "editUser.php";
+                $(location).attr('href',url);
+            
+            
+        });
+
+        $('.convert').on('click', function(){
+            var email = this.id;
+             $.get( 
+             "convertAdmin.php",
+             { "_email": email },
+             function(data) {
+                
+             }
+
+          );
+             var url = "dummy.php";
                 $(location).attr('href',url);
             
             

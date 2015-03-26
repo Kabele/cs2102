@@ -40,7 +40,7 @@ $servername = 'localhost';
         ?>
             <tr>
             <td><?php echo $row['email'] ?> </td>
-            <td> <?php echo $row['pasword'] ?> </td>
+            <td> <?php echo $row['password'] ?> </td>
             <td> <?php echo $row['auth_token'] ?> </td>
             <td> <?php echo $row['is_admin'] ?> </td>
             

@@ -1,3 +1,4 @@
+
 <table border = 1>
     <thead>
         <tr>
@@ -7,7 +8,7 @@
             <td>Admin</td>
             <td>Delete</td>
             <td>Edit</td>
-            <td><input type ="button" id="home" class="but" value="Delete"/></td>
+            <td>Make Admin</td>
             
         </tr>
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -37,13 +38,14 @@
         ?>
             <tr>
             <td><?php echo $row['email'] ?> </td>
-            <td> <?php echo $row['pasword'] ?> </td>
+            <td> <?php echo $row['password'] ?> </td>
             <td> <?php echo $row['auth_token'] ?> </td>
             <td> <?php echo $row['is_admin'] ?> </td>
             
 
             <td><input type ="button" class="delete" id= "<?php echo $row['email'] ?>" value="Delete"/></td>
             <td><input type ="button" class="edit" id= "<?php echo $row['email'] ?>" value="Edit"/></td>
+            <td><input type ="button" class="convert" id= "<?php echo $row['email'] ?>" value="Make Admin"/></td>
         </tr>
             <?php
         }
@@ -81,6 +83,22 @@
 
           );
              var url = "editUser.php";
+                $(location).attr('href',url);
+            
+            
+        });
+
+        $('.convert').on('click', function(){
+            var email = this.id;
+             $.get( 
+             "convertUser.php",
+             { "_email": email },
+             function(data) {
+                
+             }
+
+          );
+             var url = "dummy.php";
                 $(location).attr('href',url);
             
             

@@ -31,29 +31,29 @@ if ($result->num_rows > 0) {
 
 <label >
 	Email
-</label>
+</label></br>
 
 <label >
 	<?php echo $email ?>
-</label>
+</label></br>
 
 
 
 <label >
 	Password
-</label>
+</label></br>
 
-<input type="text" class="form-control" id="pwd-container" value="<?php echo $row['pasword'] ?>">
+<input type="text" class="form-control" id="pwd-container" value="<?php echo $row['password'] ?>"></br>
 
 
 
 <label >
 	Authentication Code
-</label>
+</label></br>
 
 <label >
 	<?php echo $row['auth_token'] ?>
-</label>
+</label></br>
 
 
 
