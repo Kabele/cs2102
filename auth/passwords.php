@@ -1,25 +1,17 @@
 <?php 
 // connect and set option
-putenv("ORACLE_HOME=/oraclient");
-$dbh = ocilogon('cs2102t01', 'crse1420', ' (DESCRIPTION =
-    (ADDRESS_LIST =
-      (ADDRESS = (PROTOCOL = TCP)(HOST = sid3.comp.nus.edu.sg)(PORT = 1521))
-    )
-    (CONNECT_DATA =
-      (SERVICE_NAME = sid3.comp.nus.edu.sg)
-    )
-  )');
+$path = $_SERVER['DOCUMENT_ROOT'] . "/";
 
-$sql = 'SELECT email, password
-		FROM website_user ';
-$sth = oci_parse($dbh, $sql);
-oci_execute($sth, OCI_DEFAULT);
+require_once $path.'php/connect.php';
+
+$sql = 'SELECT email, password FROM website_user';
+$results = $db->query($sql);
  
-if(! $sth )
+if(!$results)
 {
   die('Could not fetch data: ' . mysql_error());
 }
-while($row = oci_fetch_array($sth))
+while($row = mysqli_fetch_object($results))
 {
 	$USERS[$row[0]] = $row[1];
 }
@@ -28,7 +20,7 @@ function check_logged(){
 	/// checks if a valid user has logged into the system, otherwise redirects to login page 
      global $_SESSION, $USERS; 
      if (!array_key_exists($_SESSION["logged"],$USERS)) { 
-          header("Location: ".$_SERVER['DOCUMENT_ROOT']."auth/login.php"); 
+          header("Location: ".$path."auth/login.php"); 
      }; 
  }
 function is_user(){

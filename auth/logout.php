@@ -1,8 +1,9 @@
 <?php
+$path = $_SERVER['DOCUMENT_ROOT'] . "/";
 session_start();
 /// to logout of the current session
-include($_SERVER['DOCUMENT_ROOT']."/auth/passwords.php"); 
+include($path."auth/password.php"); 
 logout();
 /// redirect to readblogs.php
-header("Location: ../views/index.php"); 
+header('Location:' .$path. 'views/index.php'); 
 ?>
