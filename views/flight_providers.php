@@ -23,7 +23,7 @@
   						</h5>
   						</div>
   						<div class="col-xs-4 text-right">
-  							<button class="btn btn-default">
+  							<button class="btn btn-info">
   								Edit
   							</button>
   							<button class="btn btn-danger">
@@ -32,6 +32,48 @@
   						</div>
   					</div>
   				</li>
+
+          <?php 
+
+        require_once '../php/connect.php';
+
+
+        $sql = "SELECT a.airline_code, a.name, a.logo
+            FROM airline a;";
+
+          $res = $db->query($sql);
+
+          while ($row = mysqli_fetch_assoc($res)) {
+
+              echo '<li class="list-group-item">';
+            echo '<div class="row">';
+              echo '<div class="col-xs-8">';
+              echo '<h5>';
+                echo '<img src="'.$row['logo'].'alt="" class="logo">'.'&nbsp';
+                echo '<strong>'.$row['name'].'</strong>'.'&nbsp';
+                echo '<span>(IATA Code: '.$row['airline_code'].')</span>';
+                echo '</h5>';
+              echo '</div>';
+              echo '<div class="col-xs-4 text-right">';
+                echo '<button class="btn btn-info">';
+                  echo 'Edit';
+                echo '</button>'.'&nbsp';
+                echo '<button class="btn btn-danger">';
+                  echo 'Delete';
+                echo '</button>';
+            echo '</div>';
+          echo '</div>';
+        echo '</li>';
+
+
+          }
+
+
+
+
+
+        ?>
+
   			</ol>
   			<a href="/views/flight_providers/create.php" class="btn btn-primary">Create new Airline</a>
   		</div>
