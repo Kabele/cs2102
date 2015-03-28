@@ -42,7 +42,7 @@
 
         <?php 
 
-        require_once '../php/connect.php';
+        require_once $path.'/php/connect.php';
 
 
         $sql = "SELECT f.flight_id, f.departure, f.arrival, f.departure_date, f.arrival_date, f.price, f.airline_code, f.passenger_limit, f.status_changed_by, a.logo, a.name
