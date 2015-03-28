@@ -35,7 +35,7 @@
 
           <?php 
 
-        require_once '/php/connect.php';
+        require_once $path.'/php/connect.php';
 
 
         $sql = "SELECT a.airline_code, a.name, a.logo

@@ -34,7 +34,7 @@
 
           <?php 
 
-        require_once '/php/connect.php';
+        require_once $path.'/php/connect.php';
 
 
         $sql = "SELECT w.email, w.is_admin
