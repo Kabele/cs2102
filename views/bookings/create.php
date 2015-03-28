@@ -3,12 +3,12 @@
 <html lang="en">
 <head>
 	<title>Discount Airlines</title>
-	<?php include( $path . "partials/meta.php" ); ?>
-	<?php include( $path . "partials/styles.php" ); ?>
-	<?php include( $path . "partials/scripts.php" ); ?>
+	<?php include( $path . "views/partials/meta.php" ); ?>
+	<?php include( $path . "views/partials/styles.php" ); ?>
+	<?php include( $path . "views/partials/scripts.php" ); ?>
 </head>
 <body>
-	<?php include( $path . "partials/navbar.php" ); ?>
+	<?php include( $path . "views/partials/navbar.php" ); ?>
 	<div class="container">
 		<h1 class="text-center">Choose Your Flight</h1>
 		<div class="row">
