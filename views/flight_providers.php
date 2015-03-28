@@ -55,12 +55,16 @@
                 echo '</h5>';
               echo '</div>';
               echo '<div class="col-xs-4 text-right">';
+              echo '<form style="display: inline" action="" method="POST">';
                 echo '<button class="btn btn-info">';
                   echo 'Edit';
                 echo '</button>'.'&nbsp';
-                echo '<button class="btn btn-danger">';
+                echo '</form>';
+                echo '<form style="display: inline" action="flight_providers/delete_flight_provider.php" method="POST">';
+                echo '<button class="btn btn-danger" type="submit" name="airline_code" value="'.$row['airline_code'].'">';
                   echo 'Delete';
                 echo '</button>';
+                echo '</form>';
             echo '</div>';
           echo '</div>';
         echo '</li>';
