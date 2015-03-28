@@ -93,9 +93,6 @@
 
 
           							?>
-									<option value="SilkAir">SilkAir</option>
-									<option value="Emirates">Emirates</option>
-									<option value="9W">Jet Airways</option>
 								</select>
 							</div>
 						</div>
