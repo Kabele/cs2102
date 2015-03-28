@@ -13,6 +13,7 @@ function populateCountries(countryElementId) {
 }
 
 var monthtext=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sept','Oct','Nov','Dec'];
+var monthvalue=['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
 
 function populatedropdown(dayfield, monthfield, yearfield) {
     var today=new Date()
@@ -23,8 +24,8 @@ function populatedropdown(dayfield, monthfield, yearfield) {
     dayfield.options[i]=new Option(i, i+1)
     dayfield.options[today.getDate()]=new Option(today.getDate(), today.getDate(), true, true) //select today's day
     for (var m=0; m<12; m++)
-    monthfield.options[m]=new Option(monthtext[m], monthtext[m])
-    monthfield.options[today.getMonth()]=new Option(monthtext[today.getMonth()], monthtext[today.getMonth()], true, true) //select today's month
+    monthfield.options[m]=new Option(monthtext[m], monthvalue[m])
+    monthfield.options[today.getMonth()]=new Option(monthtext[today.getMonth()], monthvalue[today.getMonth()], true, true) //select today's month
     var thisyear=today.getFullYear()
     for (var y=0; y<20; y++){
     yearfield.options[y]=new Option(thisyear, thisyear)
