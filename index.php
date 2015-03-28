@@ -23,31 +23,31 @@
               <br>
               <br>
               <p style="margin-left: 20px; display: inline;">FROM<p id="fromText" style="color: red; display: inline;"></p></p>
-              <select id="countryFrom" name="countryFrom" style="margin-left: 20px; width: 200px;"></select>
+              <select  id="countryFrom" name="countryFrom" style="margin-left: 20px; width: 200px; color: black;"></select>
               <br>
               <br>
               <p style="margin-left: 20px; display: inline;">TO<p id="toText" style="color: red; display: inline;"></p></p>
-              <select id="countryTo" name="countryTo" style="margin-left: 20px; width: 200px;"></select>
+              <select id="countryTo" name="countryTo" style="margin-left: 20px; width: 200px; color: black;"></select>
               <br>
               <br>
               <p style="margin-left: 20px;">DEPARTURE</p>
-              <select id="departuredaydropdown" name="departureday" style="margin-left: 20px;"></select> 
-              <select id="departuremonthdropdown" name="departuremonth"></select> 
-              <select id="departureyeardropdown" name="departureyear"></select>
+              <select id="departuredaydropdown" name="departureday" style="margin-left: 20px; color: black;"></select> 
+              <select id="departuremonthdropdown" name="departuremonth" style="color: black;"></select> 
+              <select id="departureyeardropdown" name="departureyear" style="color: black;"></select>
               <br>
               <br>
               <p style="margin-left: 20px; display: inline;">RETURN<p id="returnText" style="color: red; display: inline;"></p></p>
-              <select id="returndaydropdown" name="returnday" style="margin-left: 20px;"></select> 
-              <select id="returnmonthdropdown" name="returnmonth"></select> 
-              <select id="returnyeardropdown" name="returnyear"></select>
+              <select id="returndaydropdown" name="returnday" style="margin-left: 20px; color: black;"></select> 
+              <select id="returnmonthdropdown" name="returnmonth" style="color: black;"></select> 
+              <select id="returnyeardropdown" name="returnyear" style="color: black;"></select>
               <br>
               <br>
               <p style="margin-left: 20px; display: inline">ADULT</p> &nbsp;
               <p style="margin-left: 20px; display: inline">CHILD</p>
               <p id="people" style="color: red; display: inline;"></p>
               <br>
-              <select id="noofadult" name="noofadults" style="margin-left: 20px;"></select>
-              <select id="noofchild" name="noofchildren" style="margin-left: 40px;"></select>
+              <select id="noofadult" name="noofadults" style="margin-left: 20px; color: black;"></select>
+              <select id="noofchild" name="noofchildren" style="margin-left: 40px; color: black;"></select>
               <br>
               <br>
               <button style="margin-left: 20px;" onclick="checkInput()" class="searchButton" type="button">Search</button>
