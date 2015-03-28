@@ -36,8 +36,8 @@
           <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
             <form method="post" action="login" accept-charset="UTF-8">
               <div class="form-group">
-                <label for="input-username">Passport No</label>
-                <input class="form-control" style="margin-bottom: 15px;" type="text" placeholder="Passport No." id="input-username" name="username">
+                <label for="input-username">Email</label>
+                <input class="form-control" style="margin-bottom: 15px;" type="text" placeholder="something@abc.com" id="input-username" name="username">
               </div>
               <div class="form-group">
                 <label for="input-password">Password</label>

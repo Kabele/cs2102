@@ -24,7 +24,7 @@
 									Email
 								</label>
 								<div class="col-sm-6 col-xs-12">
-									<input type="text" name="email" class="form-control" id="email-container" placeholder="H13584050">
+									<input type="text" name="email" class="form-control" id="email-container" placeholder="bob@abc.com">
 								</div>
 							</div>
 							<div class="form-group">
