@@ -31,6 +31,46 @@
   						</div>
   					</div>
   				</li>
+
+          <?php 
+
+        require_once '../php/connect.php';
+
+
+        $sql = "SELECT w.email, w.is_admin
+            FROM website_user w;";
+
+          $res = $db->query($sql);
+
+          while ($row = mysqli_fetch_assoc($res)) {
+
+              echo '<li class="list-group-item">';
+            echo '<div class="row">';
+              echo '<div class="col-xs-8">';
+              echo '<h5>';
+                echo '<strong>'.$row['email'].'</strong>';
+                echo '</h5>';
+              echo '</div>';
+              echo '<div class="col-xs-4 text-right">';
+                echo '<button class="btn btn-info">';
+                  echo 'Make Admin';
+                echo '</button>'.'&nbsp';
+                echo '<button class="btn btn-danger">';
+                  echo 'Delete';
+                echo '</button>';
+            echo '</div>';
+          echo '</div>';
+        echo '</li>';
+
+
+          }
+
+
+
+
+
+        ?>
+
   			</ol>	
   		</div>
   	</div>
