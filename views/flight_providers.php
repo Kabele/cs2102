@@ -49,7 +49,7 @@
             echo '<div class="row">';
               echo '<div class="col-xs-8">';
               echo '<h5>';
-                echo '<img src="'.$row['logo'].'alt="" class="logo">'.'&nbsp';
+                echo '<img src="'.$row['logo'].'" alt="" class="logo">'.'&nbsp';
                 echo '<strong>'.$row['name'].'</strong>'.'&nbsp';
                 echo '<span>(IATA Code: '.$row['airline_code'].')</span>';
                 echo '</h5>';
