@@ -11,7 +11,7 @@ if(!$results)
 {
   die('Could not fetch data: ' . mysql_error());
 }
-while($row = mysqli_fetch_object($results))
+while($row = mysqli_fetch_array($results))
 {
 	$USERS[$row[0]] = $row[1];
 }
