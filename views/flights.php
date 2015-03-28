@@ -18,10 +18,34 @@
 
         require_once $path.'/php/connect.php';
 
+        if (isset($_GET["roundTrip"]) && isset($_GET["countryFrom"]) && isset($_GET["countryTo"]) && isset($_GET["roundTrip"]) 
+          && isset($_GET["departuredaydropdown"]) && isset($_GET["departuremonthdropdown"]) && isset($_GET["departureyeardropdown"])) {
+            if ($_GET["roundTrip"] == "one-way") {
+              $sql = "SELECT f.flight_id, f.departure, f.arrival, f.departure_date, f.arrival_date, f.price, f.airline_code, f.passenger_limit, f.status_changed_by, a.logo, a.name
+            FROM flight f, airline a WHERE f.airline_code = a.airline_code AND f.departure = ".$_GET['countryFrom'].
+            " AND f.departure_date = ".$_GET["departureyeardropdown"]."-".$_GET["departuremonthdropdown"]."-".$_GET["departuredaydropdown"]." AND f.arrival = ".$_GET["countryTo"].";";
 
-        $sql = "SELECT f.flight_id, f.departure, f.arrival, f.departure_date, f.arrival_date, f.price, f.airline_code, f.passenger_limit, f.status_changed_by, a.logo, a.name
+            }
+
+            else if ($_GET["roundTrip"] == "round" && isset($_GET["returndaydropdown"]) && isset($_GET["returnmonthdropdown"]) 
+              && isset($_GET["returnyeardropdown"])) {
+              $sql = "SELECT f.flight_id, f.departure, f.arrival, f.departure_date, f.arrival_date, f.price, f.airline_code, f.passenger_limit, f.status_changed_by, a.logo, a.name
+            FROM flight f, airline a WHERE (f.airline_code = a.airline_code AND f.departure = ".$_GET['countryFrom'].
+            " AND f.departure_date = ".$_GET["departureyeardropdown"]."-".$_GET["departuremonthdropdown"]."-".
+            $_GET["departuredaydropdown"]." AND f.arrival = ".$_GET["countryTo"].") OR (f.airline_code = a.airline_code AND f.departure = ".
+            $_GET['countryTo']." AND f.departure_date = ".$_GET["returnyeardropdown"]."-".$_GET["returnmonthdropdown"]."-".
+            $_GET["returndaydropdown"]." AND f.arrival = ".$_GET["countryFrom"].");";
+            }
+        }
+
+        else {
+          $sql = "SELECT f.flight_id, f.departure, f.arrival, f.departure_date, f.arrival_date, f.price, f.airline_code, f.passenger_limit, f.status_changed_by, a.logo, a.name
             FROM flight f, airline a WHERE f.airline_code = a.airline_code;";
 
+        }
+
+
+        
           $res = $db->query($sql);
 
           while ($row = mysqli_fetch_assoc($res)) {
