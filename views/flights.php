@@ -13,32 +13,6 @@
     <div class="row">
       <div class="col-xs-12">
         <ol class="list-group">
-          <li class="list-group-item">
-            <div class="row">
-              <div class="col-xs-8">
-                <img src="http://img2.wikia.nocookie.net/__cb20100506081728/logopedia/images/f/fa/Singapore_Airlines.svg" alt="" class="logo">
-                <span class="lead">Singapore Airlines Flight MI467</span>
-                <p>
-                  <ul>
-                    <li>Departing from <strong>Changi Airport</strong> on <strong>March 31st, 2015</strong> at <strong>08:00 AM</strong></li>
-                    <li>Arriving at <strong>Changi Airport</strong> on <strong>March 31st, 2015</strong> at <strong>08:00 AM</strong></li>
-                    <li>Ticket Price: <strong>S$369</strong></li>
-                    <li>Total Capacity of <strong>300</strong> passengers (<strong>198</strong> booked so far)</li>
-                    <li>Last Edited by <em>allwin@discountair.com</em></li>
-                  </ul>
-                </p>
-              </h5>
-            </div>
-            <div class="col-xs-4 text-right">
-              <button class="btn btn-default">
-                Edit
-              </button>
-              <button class="btn btn-danger">
-                Delete
-              </button>
-            </div>
-          </div>
-        </li>
 
         <?php 
 
@@ -55,8 +29,8 @@
               echo '<li class="list-group-item">';
             echo '<div class="row">';
               echo '<div class="col-xs-8">';
-                echo '<img src="'.$row['logo'].'" alt="" class="logo">';
-                echo '<span class="lead">'.$row['airline_code'].'</span>';
+                echo '<img src="'.$row['logo'].'" alt="" class="logo">'.'&nbsp &nbsp';
+                echo '<span class="lead">'.$row['flight_id'].'</span>';
                 echo '<p>';
                   echo '<ul>';
                     echo '<li>Departing from <strong>'.$row['departure'].'</strong> on <strong>'.$row['departure_date'].'</strong> at <strong>08:00 AM</strong></li>';
