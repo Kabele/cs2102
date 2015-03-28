@@ -24,7 +24,7 @@ if(array_key_exists("ac", $_POST)){
                /// check if submitted username and password exist in $USERS array.
                /// set "logged" attribute of $_SESSION as user name and redirect to readblogs.php
                     $_SESSION["logged"]=$_POST["email"]; 
-                    header('Location:' .$path. 'views/index.php'); 
+                    /// header('Location: ' .$path. 'index.php'); 
                } else { 
                     echo 'Incorrect password. Please, try again.'; 
                }; 
@@ -37,12 +37,15 @@ if(array_key_exists("ac", $_POST)){
 
 if(array_key_exists("logged", $_SESSION)){
      if (array_key_exists($_SESSION["logged"],$USERS)) { //// check if user is logged or not  
-          echo "You are logged in."; //// if user is logged show a message            
+          echo "You are logged in.";
+          echo $_SESSION["logged"];
+          header('Location:'.'/index.php');
+           //// if user is logged show a message            
      }
 } else { //// if not logged show login form 
      ?>
      <!-- form for user to enter login details - user name and password  and send it to login.php by post method-->
-     <form action="../auth/login.php" method="post" class="form-horizontal">
+     <form action="/auth/login.php" method="post" class="form-horizontal">
                <input type="hidden" name="ac" value="log"> 
                <div class="control-group">
                     <label class="control-label">Email:</label>
