@@ -18,13 +18,13 @@
 				</div>
 				<div class="row">
 					<div class="col-xs-12">
-						<form class="form-horizontal">
+						<form class="form-horizontal" action="new_user.php" method="POST">
 							<div class="form-group">
 								<label for="email-container" class="col-sm-6 col-xs-12 control-label">
-									Your Passport Number
+									Email
 								</label>
 								<div class="col-sm-6 col-xs-12">
-									<input type="text" class="form-control" id="email-container" placeholder="H13584050">
+									<input type="text" name="email" class="form-control" id="email-container" placeholder="H13584050">
 								</div>
 							</div>
 							<div class="form-group">
@@ -32,7 +32,7 @@
 									Password
 								</label>
 								<div class="col-sm-6 col-xs-12">
-									<input type="password" class="form-control" id="pwd-container" placeholder="Make sure this is easy to remember">
+									<input type="password" name="password" class="form-control" id="pwd-container" placeholder="Make sure this is easy to remember">
 								</div>
 							</div>
 							<div class="form-group">

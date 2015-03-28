@@ -46,7 +46,7 @@
               <input class="btn btn-primary btn-block" type="submit" id="sign-in" value="Sign In">
             </form>
             <p class="text-center">
-              <a href="#">Register Now!</a>
+              <a href="/views/users/create.php">Register Now!</a>
             </p>
           </div>
         </li>
