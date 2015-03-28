@@ -17,7 +17,7 @@
           <div class="flightSearchBox">
             <hr style="height: 3px; visibility:hidden;" />
             <h3 class="centerAlign">Search for Flights!</h3>
-            <form id="flightInfo" action="flights.php">
+            <form id="flightInfo" action="views/flights.php">
               <input style="margin-left: 20px; margin-top: 10px;" type="radio" name="flightType" value="one-way"> ONE WAY &nbsp; &nbsp; &nbsp;
               <input id="roundTrip" type="radio" name="flightType" value="round" checked> ROUND TRIP
               <br>

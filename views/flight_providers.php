@@ -33,7 +33,7 @@
   					</div>
   				</li>
   			</ol>
-  			<a href="/flight_providers/create.php" class="btn btn-primary">Create new Airline</a>
+  			<a href="/views/flight_providers/create.php" class="btn btn-primary">Create new Airline</a>
   		</div>
   	</div>
   </div>
