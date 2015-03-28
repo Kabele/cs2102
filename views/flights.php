@@ -46,9 +46,12 @@
               echo '<button class="btn btn-default">';
                 echo 'Edit';
               echo '</button>';
-              echo '<button class="btn btn-danger">';
+              echo '<form style="display: inline" action="flights/delete.php" method="POST">';
+              echo '<input type="hidden" name="departure_date" value="'.$row['departure_date'].'">';
+              echo '<button class="btn btn-danger" type="submit" name="flight_id" value="'.$row['flight_id'].'">';
                 echo 'Delete';
               echo '</button>';
+              echo '</form>';
             echo '</div>';
           echo '</div>';
         echo '</li>';

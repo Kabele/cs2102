@@ -38,7 +38,7 @@
                   echo 'Make Admin';
                 echo '</button>'.'&nbsp';
                 echo '<form style="display: inline" action="users/delete_user.php" method="POST">';
-                echo '<button class="btn btn-danger" type="submit" name="email" value="'.$row['email'].'"">';
+                echo '<button class="btn btn-danger" type="submit" name="email" value="'.$row['email'].'">';
                   echo 'Delete';
                 echo '</button>';
                 echo '</form>';
