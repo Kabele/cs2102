@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="/views/css/style.css">
 </head>
 <!-- login page for users -->
-<body>
+<body id="loginPage">
 <div id="header"></div><br />
-<div id="content" class="container">
 <?php 
 
-session_start(); 
+session_start();
 $path = $_SERVER['DOCUMENT_ROOT'] . "/";
 include($path. "auth/passwords.php"); 
 
@@ -43,33 +43,10 @@ if(array_key_exists("logged", $_SESSION)){
            //// if user is logged show a message            
      }
 } else { //// if not logged show login form 
-     ?>
-     <!-- form for user to enter login details - user name and password  and send it to login.php by post method-->
-     <form action="/auth/login.php" method="post" class="form-horizontal">
-               <input type="hidden" name="ac" value="log"> 
-               <div class="control-group">
-                    <label class="control-label">Email:</label>
-                    <div class="controls">
-                         <input type="text" name="email">
-                    </div>
-               </div>
-               <div class="control-group">
-                    <label class="control-label">Password:</label>
-                    <div class="controls">
-                         <input type="password" name="password">
-                    </div>
-               </div>
-               <div class="control-group">
-                    <label class="control-label"></label>
-                    <div class="controls">
-                         <button type="submit" class="btn btn-success" >Login</button>
-                    </div>
-               </div>
-     </form>
-     <?php
+     include 'loginForm.php';
 }; 
 ?>
-</div><br />
+
 <div id="footer"></div>
 <script>
   ///$("#header").load("../view/common/header.php"); 
