@@ -26,11 +26,11 @@ if(array_key_exists("ac", $_POST)){
                     $_SESSION["logged"]=$_POST["email"]; 
                     /// header('Location: ' .$path. 'index.php'); 
                } else { 
-                    echo 'Incorrect password. Please, try again.'; 
+                    echo '<center><h3 style="color:red">Incorrect password. Please, try again.</h3></center>'; 
                }; 
           }
           else {
-               echo 'Email does not exist. Please, try again.';
+               echo '<center><h3 style="color:red">Email does not exist. Please, try again.</h3></center>';
           }
      }; 
 }
