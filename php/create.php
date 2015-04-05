@@ -50,6 +50,7 @@ $sql = "CREATE TABLE booking ( flight_id VARCHAR(16),
 $db->query($sql);
 
 $sql = "CREATE TABLE passenger (  
+  first_name VARCHAR(64) NOT NULL,
   last_name VARCHAR(64),
   user_email VARCHAR(64) REFERENCES website_user(email) ON DELETE CASCADE ON UPDATE CASCADE,
   phone INTEGER NOT NULL,
