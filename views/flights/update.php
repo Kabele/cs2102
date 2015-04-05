@@ -2,6 +2,7 @@
 
 // connect and set option
 $path = $_SERVER['DOCUMENT_ROOT'] . "/";
+include( $path . "views/partials/global.php" ); 
 
 require_once $path.'php/connect.php';
 
@@ -26,4 +27,4 @@ $db->query($sql);
 
 ?>
 
-<?php include( $path . "views/flights.php" ); ?>      
+<?php header('Location:' . "/views/flights.php" ); ?>      
