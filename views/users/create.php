@@ -12,6 +12,7 @@
 	<?php include( $path . "views/partials/navbar.php" ); ?>
 	<?php if(isset($_SESSION["valid"])){
 			if(!$_SESSION["valid"]){
+				unset($_SESSION["valid"]);
 				echo '<center><h3 style="color:red">User Already Exists</h3></center>';
 			}	
 		} ?>
