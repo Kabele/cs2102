@@ -98,6 +98,16 @@
 							</div>
 						</div>
 						<div class="form-group">
+							<div class="col-sm-6 col-xs-12 control-label">Status</div>
+							<div class="col-sm-6 col-xs-12">
+								<select name="status" id="" class="form-control">
+									<option value="scheduled">Scheduled</option>
+									<option value="ontime">On Time</option>
+									<option value="delayed">Delayed</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
 							<div class="col-sm-6 col-sm-offset-6 col-xs-12">
 								<button type="submit" class="btn btn-primary">Create Flight</button>
 							</div>
