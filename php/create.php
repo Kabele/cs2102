@@ -52,6 +52,7 @@ $db->query($sql);
 $sql = "CREATE TABLE passenger (  
   first_name VARCHAR(64) NOT NULL,
   last_name VARCHAR(64),
+  self CHAR(1) NOT NULL,
   user_email VARCHAR(64) REFERENCES website_user(email) ON DELETE CASCADE ON UPDATE CASCADE,
   phone INTEGER NOT NULL,
   passport VARCHAR(64) PRIMARY KEY NOT NULL,
