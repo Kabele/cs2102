@@ -37,7 +37,7 @@
 							Flight Code
 							</label>
 							<div class="col-sm-6 col-xs-12">
-								<input type="text" name="flight_id" class="form-control" id="flightid-container" placeholder="<?php echo $row['flight_id'];?>">
+								<input type="text" name="flight_id" class="form-control" id="flightid-container" value="<?php echo $row['flight_id'];?>">
 							</div>
 						</div>
 						<div class="form-group">
@@ -45,7 +45,7 @@
 							Departing Airport
 							</label>
 							<div class="col-sm-6 col-xs-12">
-								<input type="text" name="departure" class="form-control" id="depart-container" placeholder="<?php echo $row['departure'];?>">
+								<input type="text" name="departure" class="form-control" id="depart-container" value="<?php echo $row['departure'];?>">
 							</div>
 						</div>
 						<div class="form-group">
@@ -53,7 +53,7 @@
 							Departing Date/Time
 							</label>
 							<div class="col-sm-6 col-xs-12">
-								<input type="datetime-local" name="departure_date" class="form-control" id="<?php echo $row['departure_date'];?>">
+								<input type="datetime-local" name="departure_date" class="form-control" id="departuretime-container" value="<?php echo $row['departure_date'];?>">
 							</div>
 						</div>
 						<div class="form-group">
@@ -61,7 +61,7 @@
 							Arriving Airport
 							</label>
 							<div class="col-sm-6 col-xs-12">
-								<input type="text" class="form-control" name="arrival" id="arrive-container" placeholder="<?php echo $row['arrival'];?>">
+								<input type="text" class="form-control" name="arrival" id="arrive-container" value="<?php echo $row['arrival'];?>">
 							</div>
 						</div>
 						<div class="form-group">
@@ -69,7 +69,7 @@
 							Arriving Date/Time
 							</label>
 							<div class="col-sm-6 col-xs-12">
-								<input type="datetime-local" name="arrival_date" class="form-control" id="arrivetime-container" placeholder="<?php echo $row['arrival_date'];?>">
+								<input type="datetime-local" name="arrival_date" class="form-control" id="arrivetime-container" value="<?php echo $row['arrival_date'];?>">
 							</div>
 						</div>
 						<div class="form-group">
@@ -77,7 +77,7 @@
 							Total number of passengers
 							</label>
 							<div class="col-sm-6 col-xs-12">
-								<input type="number" class="form-control" name="passenger_limit" id="passlimit-container" min="1" placeholder="<?php echo $row['passenger_limit'];?>">
+								<input type="number" class="form-control" name="passenger_limit" id="passlimit-container" min="1" value="<?php echo $row['passenger_limit'];?>">
 							</div>
 						</div>
 						<div class="form-group">
@@ -85,7 +85,7 @@
 							Price per Seat
 							</label>
 							<div class="col-sm-6 col-xs-12">
-								<input type="number" class="form-control" name="price" id="price-container" min="0" placeholder="<?php echo $row['price'];?>">
+								<input type="number" class="form-control" name="price" id="price-container" min="0" value="<?php echo $row['price'];?>">
 							</div>
 						</div>
 						<div class="form-group">
@@ -93,14 +93,14 @@
 							Operating Airlines	
 							</label>
 							<div class="col-sm-6 col-xs-12">
-								<select name="airline_code" id="" class="form-control" >
+								<select name="airline_code" id="" class="form-control" value="<?php echo $row['airline_code'];?>">
 									<?php 
 									$sql = "SELECT a.airline_code, a.name FROM airline a;";
 
           							$res = $db->query($sql);
 
           							while ($row = mysqli_fetch_assoc($res)) { 
-          								echo '<option value="'.$row['airline_code'].'" placeholder="'.$row['airline_code'].'">'.$row['name'].'</option>';
+          								echo '<option value="'.$row['airline_code'].'">'.$row['name'].'</option>';
           							}
 
 
