@@ -35,9 +35,17 @@
                 echo '</h5>';
               echo '</div>';
               echo '<div class="col-xs-4 text-right">';
-                echo '<button class="btn btn-info">';
+              if ($row['is_admin'] == 0) {
+              echo '<form style="display: inline" action="users/make_admin.php" method="POST">';
+                echo '<button class="btn btn-success" type="submit" name="email" value="'.$row['email'].'">';
                   echo 'Make Admin';
+                } else {
+                  echo '<form style="display: inline" action="users/revoke_admin.php" method="POST">';
+                  echo '<button class="btn btn-info" type="submit" name="email" value="'.$row['email'].'">';
+                  echo 'Revoke Admin';
+                }
                 echo '</button>'.'&nbsp';
+                echo '</form>';
                 echo '<form style="display: inline" action="users/delete_user.php" method="POST">';
                 echo '<button class="btn btn-danger" type="submit" name="email" value="'.$row['email'].'">';
                   echo 'Delete';
