@@ -82,7 +82,7 @@
 							Operating Airlines	
 							</label>
 							<div class="col-sm-6 col-xs-12">
-								<select name="airline_code" id="" class="form-control">
+								<select name="airline_code" id="airline-container" class="form-control">
 									<?php 
 									$sql = "SELECT a.airline_code, a.name FROM airline a;";
 
@@ -94,6 +94,16 @@
 
 
           							?>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="status-container" class="col-sm-6 col-xs-12 control-label">Status</label>
+							<div class="col-sm-6 col-xs-12">
+								<select name="status" id="status-container" class="form-control">
+									<option value="scheduled">Scheduled</option>
+									<option value="ontime">On Time</option>
+									<option value="delayed">Delayed</option>
 								</select>
 							</div>
 						</div>
