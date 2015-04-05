@@ -14,7 +14,7 @@
 	require_once $path.'/php/connect.php';
 	$departure_date = '"'.$_GET["departureyear"]."-".$_GET["departuremonth"]."-".$_GET["departureday"].'"';
 	$departure_airport = '"'.$_GET["countryFrom"].'"';
-	$return_date = '"'.$_GET["arrivalyear"]."-".$_GET["arrivalmonth"]."-".$_GET["arrivalday"].'"';
+	$return_date = '"'.$_GET["returnyear"]."-".$_GET["returnmonth"]."-".$_GET["returnday"].'"';
 	$arrival_airport = '"'.$_GET["countryTo"].'"';
 	$sql_forward = sprintf('SELECT '.
 		'f.flight_id, f.departure, f.arrival, '.
@@ -92,7 +92,7 @@
 				<?php while($row = mysqli_fetch_assoc($res2)) {
 				?>
 				<div class="list-group">
-					<a href="details.php" class="list-group-item return-flight">
+					<a href="#" class="list-group-item return-flight">
 						<h1>
 							S$<?php echo $row['price'] ?><small>/<span class="glyphicon glyphicon-user" aria-hidden="true"></span></small>
 							<img src="<?php echo $row['logo'] ?>" alt="" class="logo">
@@ -122,7 +122,7 @@
 		</div>
 		<?php } ?>
 		<div class="row">
-			<div class="col-xs-12"><a href="#" class="btn btn-lg btn-primary disabled pull-right">
+			<div class="col-xs-12"><a href="#" id="next" class="btn btn-lg btn-primary disabled pull-right">
 				Next
 			</a></div>
 		</div>
@@ -132,6 +132,24 @@
 		$('.forward-flight').click(function(){
 			$('.forward-flight.active').removeClass('active');
 			$(this).addClass('active');
+		});
+		$('.return-flight').click(function(){
+			$('.return-flight.active').removeClass('active');
+			$(this).addClass('active');
+		});
+
+		$('.forward-flight, .return-flight').click(function(){
+			if($('.return-flight').length > 0 &&
+				 $('.return-flight.active').length == 1 &&
+				 $('.forward-flight.active').length == 1){
+				$('#next').removeClass('disabled');
+			}else if(
+				$('.return-flight').length == 0 &&
+				$('.forward-flight.active').length == 1){
+				$('#next').removeClass('disabled');
+			}else{
+				$('#next').addClass('disabled');
+			}
 		});
 	});
 	</script>
