@@ -14,25 +14,6 @@
   	<div class="row">
   		<div class="col-xs-12">
   			<ol class="list-group">
-  				<li class="list-group-item">
-  					<div class="row">
-  						<div class="col-xs-8">
-  						<h5>
-								<img src="http://img2.wikia.nocookie.net/__cb20100506081728/logopedia/images/f/fa/Singapore_Airlines.svg" alt="" class="logo">
-  							<strong>Singapore Airlines</strong>
-  							<span>(IATA Code: 2X)</span>
-  						</h5>
-  						</div>
-  						<div class="col-xs-4 text-right">
-  							<button class="btn btn-info">
-  								Edit
-  							</button>
-  							<button class="btn btn-danger">
-  								Delete
-  							</button>
-  						</div>
-  					</div>
-  				</li>
 
           <?php 
 
@@ -56,12 +37,12 @@
                 echo '</h5>';
               echo '</div>';
               echo '<div class="col-xs-4 text-right">';
-              echo '<form style="display: inline" action="" method="POST">';
-                echo '<button class="btn btn-info">';
+              echo '<form style="display: inline" action="/views/flight_providers/edit.php" method="POST">';
+                echo '<button class="btn btn-info" type="submit" name="airline_code" value="'.$row['airline_code'].'">';
                   echo 'Edit';
                 echo '</button>'.'&nbsp';
                 echo '</form>';
-                echo '<form style="display: inline" action="flight_providers/delete_flight_provider.php" method="POST">';
+                echo '<form style="display: inline" action="/views/flight_providers/delete_flight_provider.php" method="POST">';
                 echo '<button class="btn btn-danger" type="submit" name="airline_code" value="'.$row['airline_code'].'">';
                   echo 'Delete';
                 echo '</button>';

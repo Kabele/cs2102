@@ -4,7 +4,7 @@ $path = $_SERVER['DOCUMENT_ROOT'] . "/";
 
 require_once $path.'php/connect.php';
 
-$sql = 'SELECT email, password FROM website_user';
+$sql = 'SELECT email, password, is_admin FROM website_user';
 $results = $db->query($sql);
  
 if(!$results)
@@ -14,6 +14,7 @@ if(!$results)
 while($row = mysqli_fetch_array($results))
 {
 	$USERS[$row[0]] = $row[1];
+	$ADMIN[$row[0]] = $row[2];
 }
   
 function check_logged(){ 
@@ -32,5 +33,6 @@ function logout(){
 	/// logs out of the system by un-setting the "logged" attribute of the $_SESSION array
 	global $_SESSION, $USERS; 
 	unset($_SESSION["logged"]);
+	unset($_SESSION["admin"]);
 }
 ?>
