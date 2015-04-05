@@ -6,18 +6,23 @@ include( $path . "views/partials/global.php" );
 
 require_once $path.'php/connect.php';
 
+echo substr($_POST["departure_date"], 0, 10);
+echo substr($_POST["departure_date"], 11);
+
 $flight_id = $_POST["flight_id"];
 $departure = $_POST["departure"];
 $arrival = $_POST["arrival"];
-$departure_date = $_POST["departure_date"];
-$arrival_date = $_POST["arrival_date"];
+$departure_date = substr($_POST["departure_date"], 0, 10);
+$departure_time = substr($_POST["departure_date"], 11);
+$arrival_date = substr($_POST["arrival_date"], 0, 10);
+$arrival_time = substr($_POST["arrival_date"], 11);
 $passenger_limit = $_POST["passenger_limit"];
 $status = $_POST["status"];
 $status_changed_by = $_POST["status_changed_by"];
 $price = $_POST["price"];
 $airline_code = $_POST["airline_code"];
 
-$sql = "INSERT INTO flight VALUES('".$flight_id."', '".$departure."', '".$arrival."', '".$departure_date."', '".$arrival_date."', '".$passenger_limit."', '".$status."', '".
+$sql = "INSERT INTO flight VALUES('".$flight_id."', '".$departure."', '".$arrival."', '".$departure_date."', '".$arrival_date."', '".$departure_time."', '".$arrival_time."', '".$passenger_limit."', '".$status."', '".
 	$status_changed_by."', '".$price."', '".$airline_code."');";
 
 $db->query($sql);

@@ -20,7 +20,7 @@
         require_once $path.'/php/connect.php';
 
 
-          $sql = "SELECT f.flight_id, f.departure, f.arrival, f.departure_date, f.arrival_date, f.price, f.airline_code, f.passenger_limit, f.status_changed_by, a.logo, a.name
+          $sql = "SELECT f.flight_id, f.departure, f.arrival, f.departure_date, f.arrival_date, f.departure_time, f.arrival_time, f.price, f.airline_code, f.passenger_limit, f.status_changed_by, a.logo, a.name
             FROM flight f, airline a WHERE f.airline_code = a.airline_code;";
 
           $res = $db->query($sql);
@@ -34,8 +34,8 @@
                 echo '<span class="lead">'.$row['flight_id'].'</span>';
                 echo '<p>';
                   echo '<ul>';
-                    echo '<li>Departing from <strong>'.$row['departure'].'</strong> on <strong>'.$row['departure_date'].'</strong> at <strong>08:00 AM</strong></li>';
-                    echo '<li>Arriving at <strong>'.$row['arrival'].'</strong> on <strong>'.$row['arrival_date'].'</strong> at <strong>08:00 AM</strong></li>';
+                    echo '<li>Departing from <strong>'.$row['departure'].'</strong> on <strong>'.$row['departure_date'].'</strong> at <strong>'.$row['departure_time'].'</strong></li>';
+                    echo '<li>Arriving at <strong>'.$row['arrival'].'</strong> on <strong>'.$row['arrival_date'].'</strong> at <strong>'.$row['arrival_time'].'</strong></li>';
                     echo '<li>Ticket Price: <strong>'.$row['price'].'</strong></li>';
                     echo '<li>Total Capacity of <strong>'.$row['passenger_limit'].'</strong> passengers (<strong>198</strong> booked so far)</li>';
                     echo '<li>Last Edited by <em>'.$row['status_changed_by'].'</em></li>';
