@@ -21,7 +21,10 @@ if(array_key_exists("ac", $_POST)){
           else {
                echo '<center><h3 style="color:red">Email does not exist. Please, try again.</h3></center>';
           }
-     }; 
+     }
+     else{
+          ///echo '<center><h3 style="color:red">User Already Exists.</h3></center>';
+     }
 }
 
 if(array_key_exists("logged", $_SESSION)){
