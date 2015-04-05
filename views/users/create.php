@@ -10,6 +10,11 @@
 </head>
 <body>
 	<?php include( $path . "views/partials/navbar.php" ); ?>
+	<?php if(isset($_SESSION["valid"])){
+			if(!$_SESSION["valid"]){
+				echo '<center><h3 style="color:red">User Already Exists</h3></center>';
+			}	
+		} ?>
 	<div class="container">
 			<div class="well">
 				<div class="row">
