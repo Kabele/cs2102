@@ -34,5 +34,6 @@ function logout(){
 	global $_SESSION, $USERS; 
 	unset($_SESSION["logged"]);
 	unset($_SESSION["admin"]);
+	unset($_SESSION["valid"]);
 }
 ?>

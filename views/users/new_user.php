@@ -6,6 +6,7 @@ $authentication = 'token';
 $admin = 0;
 
 $path = $_SERVER['DOCUMENT_ROOT'] . "/";
+include( $path . "views/partials/global.php" ); 
 
 require_once ($path . 'php/connect.php');
 
@@ -14,6 +15,8 @@ $result = $db->query($sql);
 
 if(!$result){
 	$log = "notlog";
+	///echo '<center><h3 style="color:red">User Already Exists</h3></center>';
+	$_SESSION["valid"] = false;
 	header('Location:' . '/views/users/create.php');
 }else{
 	$log = "log";
