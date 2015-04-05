@@ -49,11 +49,11 @@ $sql = "CREATE TABLE booking ( flight_id VARCHAR(16),
 
 $db->query($sql);
 
-$sql = "CREATE TABLE passenger ( first_name VARCHAR(64) NOT NULL,
+$sql = "CREATE TABLE passenger (  
   last_name VARCHAR(64),
   user_email VARCHAR(64) REFERENCES website_user(email) ON DELETE CASCADE ON UPDATE CASCADE,
   phone INTEGER NOT NULL,
-  PRIMARY KEY passport  VARCHAR(64) NOT NULL,
+  passport VARCHAR(64) PRIMARY KEY NOT NULL,
   country VARCHAR(64) NOT NULL,
   diet  VARCHAR(64) NOT NULL);";
 
@@ -64,7 +64,7 @@ $sql = "CREATE TABLE booking_passenger ( flight_id VARCHAR(16),
   booking_time TIME,
   FOREIGN KEY(flight_id, departure_date) REFERENCES flight(flight_id, departure_date) ON DELETE CASCADE ON UPDATE CASCADE,
   user_email VARCHAR(64) REFERENCES website_user(email) ON DELETE CASCADE ON UPDATE CASCADE,
-  passport REFERENCES passenger(passport) ON DELETE CASCADE ON UPDATE CASCADE,
+  passport VARCHAR(64) REFERENCES passenger(passport) ON DELETE CASCADE ON UPDATE CASCADE,
   PRIMARY KEY (flight_id, departure_date, user_email, booking_time, passport));";
 
 $db->query($sql);
