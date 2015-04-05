@@ -6,8 +6,6 @@ include( $path . "views/partials/global.php" );
 
 require_once $path.'php/connect.php';
 
-echo substr($_POST["departure_date"], 0, 10);
-echo substr($_POST["departure_date"], 11);
 
 $flight_id = $_POST["flight_id"];
 $departure = $_POST["departure"];
@@ -18,7 +16,7 @@ $arrival_date = substr($_POST["arrival_date"], 0, 10);
 $arrival_time = substr($_POST["arrival_date"], 11);
 $passenger_limit = $_POST["passenger_limit"];
 $status = $_POST["status"];
-$status_changed_by = $_POST["status_changed_by"];
+$status_changed_by = $_SESSION["logged"];
 $price = $_POST["price"];
 $airline_code = $_POST["airline_code"];
 
