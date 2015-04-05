@@ -43,12 +43,12 @@
               echo '</h5>';
             echo '</div>';
             echo '<div class="col-xs-4 text-right">';
-              echo '<form style="display: inline" action="flights/edit.php" method="POST">';
+              echo '<form style="display: inline" action="/views/flights/edit.php" method="POST">';
               echo '<input type="hidden" name="departure_date" value="'.$row['departure_date'].'">';
               echo '<button class="btn btn-default" type="submit" name="flight_id" value="'.$row['flight_id'].'">';
                 echo 'Edit';
               echo '</button>';
-              echo '<form style="display: inline" action="flights/delete.php" method="POST">';
+              echo '<form style="display: inline" action="/views/flights/delete.php" method="POST">';
               echo '<input type="hidden" name="departure_date" value="'.$row['departure_date'].'">';
               echo '<button class="btn btn-danger" type="submit" name="flight_id" value="'.$row['flight_id'].'">';
                 echo 'Delete';
