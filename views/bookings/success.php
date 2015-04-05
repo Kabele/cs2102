@@ -1,3 +1,4 @@
+<?php include( "views/partials/global.php" ); ?>
 <?php $path = $_SERVER['DOCUMENT_ROOT'] . "/"; ?>
 <!DOCTYPE html>
 <html lang="en">
