@@ -39,7 +39,7 @@
 				while($row = mysqli_fetch_assoc($res)) {
 				?>
 				<div class="list-group">
-					<a href="#" class="list-group-item forward-flight">
+					<a href="#" class="list-group-item forward-flight" id="<?php echo $row['flight_id'] ?>">
 						<h1>
 							S$<?php echo $row['price'] ?><small>/<span class="glyphicon glyphicon-user" aria-hidden="true"></span></small>
 							<img src="<?php echo $row['logo'] ?>" alt="" class="logo">
@@ -51,7 +51,7 @@
 							Departing from 
 							<span class="lead"><?php echo $row['departure'] ?></span>
 							on 
-							<span class="lead"><?php echo $row['departure_date'] ?></span>
+							<span class="lead depdate"><?php echo $row['departure_date'] ?></span>
 							at 
 							<span class="lead">8:30 AM</span>
 							<br>
@@ -92,7 +92,7 @@
 				<?php while($row = mysqli_fetch_assoc($res2)) {
 				?>
 				<div class="list-group">
-					<a href="#" class="list-group-item return-flight">
+					<a href="#" class="list-group-item return-flight" id="<?php echo $row['flight_id'] ?>">
 						<h1>
 							S$<?php echo $row['price'] ?><small>/<span class="glyphicon glyphicon-user" aria-hidden="true"></span></small>
 							<img src="<?php echo $row['logo'] ?>" alt="" class="logo">
@@ -151,6 +151,25 @@
 				$('#next').addClass('disabled');
 			}
 		});
+		$('#next').on('click', function(e){
+			if($(this).hasClass('disabled'))
+				return;
+			e.preventDefault();
+			//required arguments to pass on
+			//noofadults, forward, return
+			var adults = <?php echo $_GET["noofadults"] ?>;
+			var forwardId = $('.forward-flight.active').attr('id');
+			var forwardDate = $('.forward-flight.active .depdate').text().trim();
+			var backwardId = $('.return-flight.active').attr('id') || "";
+			var backwardDate = $('.return-flight.active .depdate').text().trim();
+
+			location.href = "/views/bookings/details.php?" +
+												"adults=" + adults + "&" +
+												"forward=" + forwardId + "&" +
+												"fdate=" + forwardDate + "&" +
+												"backward=" + backwardId + "&" +
+												"bdate=" + backwardDate;
+		})
 	});
 	</script>
 </body>
