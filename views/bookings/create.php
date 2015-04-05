@@ -42,6 +42,8 @@
 				</div>
 			</div>
 		</div>
+		<!-- This section should only show if there is a return flight involved -->
+		<?php if($_GET["flightType"] != "one-way"){ ?>
 		<h1 class="text-center">Choose Your Return Flight</h1>
 		<div class="row">
 			<div class="col-xs-12">
@@ -73,6 +75,7 @@
 				</div>
 			</div>
 		</div>
+		<?php } ?>
 	</div>
 </body>
 </html>
