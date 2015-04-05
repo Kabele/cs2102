@@ -1,3 +1,17 @@
+<html>
+<head>
+<title></title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="/views/css/style.css">
+</head>
+<!-- login page for users -->
+<body id="loginPage">
+
+<div id="header"></div><br />
+
 <div class="container" id="content">
     <div class="row">
         <div class="col-md-4 col-md-offset-7">
@@ -42,3 +56,11 @@
         </div>
     </div>
 </div>
+
+<div id="footer"></div>
+<script>
+  ///$("#header").load("../view/common/header.php"); 
+  ///$("#footer").load("../view/common/footer.php"); 
+</script> 
+</body>
+</html>

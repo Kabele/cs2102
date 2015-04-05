@@ -32,6 +32,5 @@ function logout(){
 	/// logs out of the system by un-setting the "logged" attribute of the $_SESSION array
 	global $_SESSION, $USERS; 
 	unset($_SESSION["logged"]);
-	echo 'You have logged out';
 }
 ?>

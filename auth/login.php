@@ -1,15 +1,3 @@
-<html>
-<head>
-<title></title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-<link rel="stylesheet" href="/views/css/style.css">
-</head>
-<!-- login page for users -->
-<body id="loginPage">
-<div id="header"></div><br />
 <?php 
 
 session_start();
@@ -36,9 +24,7 @@ if(array_key_exists("ac", $_POST)){
 }
 
 if(array_key_exists("logged", $_SESSION)){
-     if (array_key_exists($_SESSION["logged"],$USERS)) { //// check if user is logged or not  
-          echo "You are logged in.";
-          echo $_SESSION["logged"];
+     if (array_key_exists($_SESSION["logged"],$USERS)) { //// check if user is logged or not 
           header('Location:'.'/index.php');
            //// if user is logged show a message            
      }
@@ -46,11 +32,3 @@ if(array_key_exists("logged", $_SESSION)){
      include 'loginForm.php';
 }; 
 ?>
-
-<div id="footer"></div>
-<script>
-  ///$("#header").load("../view/common/header.php"); 
-  ///$("#footer").load("../view/common/footer.php"); 
-</script> 
-</body>
-</html>

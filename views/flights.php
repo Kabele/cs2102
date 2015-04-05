@@ -1,4 +1,5 @@
 <?php $path = $_SERVER['DOCUMENT_ROOT'] . "/"; ?>
+<?php include( $path . "views/partials/global.php" ); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,8 +48,13 @@
               echo '<input type="hidden" name="departure_date" value="'.$row['departure_date'].'">';
               echo '<button class="btn btn-default" type="submit" name="flight_id" value="'.$row['flight_id'].'">';
                 echo 'Edit';
+<<<<<<< HEAD
               echo '</button>';
               echo '<form style="display: inline" action="/views/flights/delete.php" method="POST">';
+=======
+              echo '</button>'.'&nbsp';
+              echo '<form style="display: inline" action="flights/delete.php" method="POST">';
+>>>>>>> origin/master
               echo '<input type="hidden" name="departure_date" value="'.$row['departure_date'].'">';
               echo '<button class="btn btn-danger" type="submit" name="flight_id" value="'.$row['flight_id'].'">';
                 echo 'Delete';
