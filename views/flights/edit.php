@@ -38,7 +38,7 @@
 							Flight Code
 							</label>
 							<div class="col-sm-6 col-xs-12">
-								<input type="text" name="flight_id" class="form-control" id="flightid-container" value="<?php echo $row['flight_id'];?>">
+								<input type="text" name="flight_id" class="form-control" id="flightid-container" value="<?php echo $row['flight_id'];?>" readonly>
 							</div>
 						</div>
 						<div class="form-group">
@@ -54,7 +54,7 @@
 							Departing Date/Time
 							</label>
 							<div class="col-sm-6 col-xs-12">
-								<input type="datetime-local" name="departure_date" class="form-control" id="departuretime-container" value="<?php echo $row['departure_date'];?>">
+								<input type="datetime-local" name="departure_date" class="form-control" id="departuretime-container" value="<?php echo $row['departure_date'].'T'.$row['departure_time'];?>" readonly>
 							</div>
 						</div>
 						<div class="form-group">
@@ -70,7 +70,7 @@
 							Arriving Date/Time
 							</label>
 							<div class="col-sm-6 col-xs-12">
-								<input type="datetime-local" name="arrival_date" class="form-control" id="arrivetime-container" value="<?php echo $row['arrival_date'];?>">
+								<input type="datetime-local" name="arrival_date" class="form-control" id="arrivetime-container" value="<?php echo $row['arrival_date'].'T'.$row['arrival_time'];?>">
 							</div>
 						</div>
 						<div class="form-group">
@@ -106,6 +106,16 @@
 
 
           							?>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="status-container" class="col-sm-6 col-xs-12 control-label">Status</label>
+							<div class="col-sm-6 col-xs-12">
+								<select name="status" id="status-container" class="form-control" value="<?php echo $row['status'];?>">
+									<option value="scheduled">Scheduled</option>
+									<option value="ontime">On Time</option>
+									<option value="delayed">Delayed</option>
 								</select>
 							</div>
 						</div>
