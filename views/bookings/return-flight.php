@@ -1,5 +1,5 @@
-<?php include( "views/partials/global.php" ); ?>
 <?php $path = $_SERVER['DOCUMENT_ROOT'] . "/"; ?>
+<?php include( $path . "views/partials/global.php" ); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
