@@ -1,3 +1,4 @@
+<?php include( "views/partials/global.php" ); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
