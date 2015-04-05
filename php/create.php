@@ -27,9 +27,11 @@ $sql = "CREATE TABLE flight (
   arrival VARCHAR(64) NOT NULL,  
   departure_date  DATE  NOT NULL,
   arrival_date  DATE  NOT NULL,
+  departure_time TIME NOT NULL,
+  arrival_time TIME NOT NULL,
   passenger_limit INTEGER NOT NULL,
   status  VARCHAR(64) NOT NULL,
-  status_changed_by VARCHAR(64) REFERENCES website_user(email),
+  status_changed_by VARCHAR(64) REFERENCES website_user(email) ON DELETE CASCADE ON UPDATE CASCADE,
   -- class ENUM('ECON', 'BUSINESS', 'FIRST'),
   price INTEGER NOT NULL,
   airline_code VARCHAR(3) REFERENCES airline(airline_code),
@@ -42,17 +44,28 @@ $sql = "CREATE TABLE booking ( flight_id VARCHAR(16),
   departure_date  DATE,
   booking_time TIME,
   FOREIGN KEY(flight_id, departure_date) REFERENCES flight(flight_id, departure_date),
-  user_email VARCHAR(64) REFERENCES website_user(email),
+  user_email VARCHAR(64) REFERENCES website_user(email) ON DELETE CASCADE ON UPDATE CASCADE,
   PRIMARY KEY (flight_id, departure_date, user_email, booking_time));";
 
 $db->query($sql);
 
 $sql = "CREATE TABLE passenger ( first_name VARCHAR(64) NOT NULL,
   last_name VARCHAR(64),
+  user_email VARCHAR(64) REFERENCES website_user(email) ON DELETE CASCADE ON UPDATE CASCADE,
   phone INTEGER NOT NULL,
   PRIMARY KEY passport  VARCHAR(64) NOT NULL,
   country VARCHAR(64) NOT NULL,
   diet  VARCHAR(64) NOT NULL);";
+
+$db->query($sql);
+
+$sql = "CREATE TABLE booking_passenger ( flight_id VARCHAR(16),
+  departure_date  DATE,
+  booking_time TIME,
+  FOREIGN KEY(flight_id, departure_date) REFERENCES flight(flight_id, departure_date) ON DELETE CASCADE ON UPDATE CASCADE,
+  user_email VARCHAR(64) REFERENCES website_user(email) ON DELETE CASCADE ON UPDATE CASCADE,
+  passport REFERENCES passenger(passport) ON DELETE CASCADE ON UPDATE CASCADE,
+  PRIMARY KEY (flight_id, departure_date, user_email, booking_time, passport));";
 
 $db->query($sql);
 
@@ -76,7 +89,7 @@ $sql = "ALTER SESSION SET nls_date_format='yyyy-mm-dd';";
 $db->query($sql);
 
 // insert dummy flight
-$sql = "INSERT INTO flight VALUES ('9W343', 'Mumbai', 'Singapore', '2015-05-10', '2015-06-10', '200', 'ON TIME', 'anand@something.com', '400', '9W');";
+$sql = "INSERT INTO flight VALUES ('9W343', 'Mumbai', 'Singapore', '2015-05-10', '08:00', '2015-06-10', '10:00', '200', 'ON TIME', 'anand@something.com', '400', '9W');";
 
 $db->query($sql);
 
