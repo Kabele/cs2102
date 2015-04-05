@@ -10,72 +10,130 @@
 </head>
 <body>
 	<?php include( $path . "views/partials/navbar.php" ); ?>
+	<?php 
+	require_once $path.'/php/connect.php';
+	$departure_date = '"'.$_GET["departureyear"]."-".$_GET["departuremonth"]."-".$_GET["departureday"].'"';
+	$departure_airport = '"'.$_GET["countryFrom"].'"';
+	$return_date = '"'.$_GET["arrivalyear"]."-".$_GET["arrivalmonth"]."-".$_GET["arrivalday"].'"';
+	$arrival_airport = '"'.$_GET["countryTo"].'"';
+	$sql_forward = sprintf('SELECT '.
+		'f.flight_id, f.departure, f.arrival, '.
+		'f.departure_date, f.arrival_date, f.price, '.
+		'f.airline_code, f.passenger_limit, '.
+		'f.status_changed_by, a.logo, a.name '.
+    'FROM flight f, airline a '.
+    'WHERE f.airline_code = a.airline_code AND '.
+    'f.departure = %s AND f.departure_date = %s AND f.arrival = %s;',
+    $departure_airport,
+    $departure_date,
+    $arrival_airport);
+	$res = $db->query($sql_forward);
+	?>
 	<div class="container">
 		<h1 class="text-center">Choose Your Forward Flight</h1>
 		<div class="row">
 			<div class="col-xs-12">
+				<?php if(!$res || $res->num_rows == 0) {?>
+				<p class="text-center">No Flights Found :(</p>
+				<?php } else { 
+				while($row = mysqli_fetch_assoc($res)) {
+				?>
 				<div class="list-group">
-					<a href="return-flight.php" class="list-group-item">
+					<a href="#" class="list-group-item forward-flight">
 						<h1>
-							S$830<small>/<span class="glyphicon glyphicon-user" aria-hidden="true"></span></small>
-							<img src="http://img2.wikia.nocookie.net/__cb20100506081728/logopedia/images/f/fa/Singapore_Airlines.svg" alt="" class="logo">
+							S$<?php echo $row['price'] ?><small>/<span class="glyphicon glyphicon-user" aria-hidden="true"></span></small>
+							<img src="<?php echo $row['logo'] ?>" alt="" class="logo">
 							<small>
-								Singapore Airlines
+								<?php echo $row['name'] ?>
 							</small>
 						</h1>
 						<p>
 							Departing from 
-							<span class="lead">Changi International Airport</span>
+							<span class="lead"><?php echo $row['departure'] ?></span>
 							on 
-							<span class="lead">Saturday, 14th March 2015</span>
+							<span class="lead"><?php echo $row['departure_date'] ?></span>
 							at 
 							<span class="lead">8:30 AM</span>
 							<br>
 							and expected to reach 
-							<span class="lead">Dubai International Airport</span>
+							<span class="lead"><?php echo $row['arrival'] ?></span>
 							on 
-							<span class="lead">the same day</span>
+							<span class="lead"><?php echo $row['arrival_date'] ?></span>
 							at 
 							<span class="lead">6:00 PM</span> local time.
 						</p>
 					</a>
 				</div>
+				<?php } }?>
 			</div>
 		</div>
 		<!-- This section should only show if there is a return flight involved -->
-		<?php if($_GET["flightType"] != "one-way"){ ?>
+		<?php if($_GET["flightType"] == "round"){ ?>
+		<?php 
+		$sql_return = sprintf('SELECT '.
+			'f.flight_id, f.departure, f.arrival, '.
+			'f.departure_date, f.arrival_date, f.price, '.
+			'f.airline_code, f.passenger_limit, '.
+			'f.status_changed_by, a.logo, a.name '.
+    	'FROM flight f, airline a '.
+    	'WHERE f.airline_code = a.airline_code AND '.
+    	'f.departure = %s AND f.departure_date = %s AND f.arrival = %s;',
+    	$arrival_airport,
+    	$return_date,
+    	$departure_airport);
+		$res2 = $db->query($sql_return);
+		?>
 		<h1 class="text-center">Choose Your Return Flight</h1>
 		<div class="row">
 			<div class="col-xs-12">
+				<?php if(!$res2 || $res2->num_rows == 0) {?>
+				<p class="text-center">No Flights Found :(</p>
+				<?php } else { ?>
+				<?php while($row = mysqli_fetch_assoc($res2)) {
+				?>
 				<div class="list-group">
-					<a href="return-flight.php" class="list-group-item">
+					<a href="details.php" class="list-group-item return-flight">
 						<h1>
-							S$830<small>/<span class="glyphicon glyphicon-user" aria-hidden="true"></span></small>
-							<img src="http://img2.wikia.nocookie.net/__cb20100506081728/logopedia/images/f/fa/Singapore_Airlines.svg" alt="" class="logo">
+							S$<?php echo $row['price'] ?><small>/<span class="glyphicon glyphicon-user" aria-hidden="true"></span></small>
+							<img src="<?php echo $row['logo'] ?>" alt="" class="logo">
 							<small>
-								Singapore Airlines
+								<?php echo $row['name'] ?>
 							</small>
 						</h1>
 						<p>
 							Departing from 
-							<span class="lead">Changi International Airport</span>
+							<span class="lead"><?php echo $row['departure'] ?></span>
 							on 
-							<span class="lead">Saturday, 14th March 2015</span>
+							<span class="lead"><?php echo $row['departure_date'] ?></span>
 							at 
 							<span class="lead">8:30 AM</span>
 							<br>
 							and expected to reach 
-							<span class="lead">Dubai International Airport</span>
+							<span class="lead"><?php echo $row['arrival'] ?></span>
 							on 
-							<span class="lead">the same day</span>
+							<span class="lead"><?php echo $row['arrival_date'] ?></span>
 							at 
 							<span class="lead">6:00 PM</span> local time.
 						</p>
 					</a>
 				</div>
+				<?php } }?>
 			</div>
 		</div>
 		<?php } ?>
+		<div class="row">
+			<div class="col-xs-12"><a href="#" class="btn btn-lg btn-primary disabled pull-right">
+				Next
+			</a></div>
+		</div>
 	</div>
+	<script>
+	$(function(){
+		$('.forward-flight').click(function(){
+			$('.forward-flight.active').removeClass('active');
+			$(this).addClass('active');
+		});
+	});
+	</script>
 </body>
 </html>
