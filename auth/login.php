@@ -12,6 +12,7 @@ if(array_key_exists("ac", $_POST)){
                /// check if submitted username and password exist in $USERS array.
                /// set "logged" attribute of $_SESSION as user name and redirect to readblogs.php
                     $_SESSION["logged"]=$_POST["email"]; 
+                    $_SESSION["admin"] = $ADMIN[$_POST["email"]];
                     /// header('Location: ' .$path. 'index.php'); 
                } else { 
                     echo '<center><h3 style="color:red">Incorrect password. Please, try again.</h3></center>'; 

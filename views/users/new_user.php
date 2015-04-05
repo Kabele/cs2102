@@ -3,7 +3,7 @@
 $email = $_POST["email"];
 $password = $_POST["password"];
 $authentication = 'token';
-$admin = 1;
+$admin = 0;
 
 $path = $_SERVER['DOCUMENT_ROOT'] . "/";
 
