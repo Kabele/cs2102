@@ -49,7 +49,7 @@ $db->query($sql);
 $sql = "CREATE TABLE passenger ( first_name VARCHAR(64) NOT NULL,
   last_name VARCHAR(64),
   phone INTEGER NOT NULL,
-  passport  VARCHAR(64) NOT NULL,
+  PRIMARY KEY passport  VARCHAR(64) NOT NULL,
   country VARCHAR(64) NOT NULL,
   diet  VARCHAR(64) NOT NULL);";
 
