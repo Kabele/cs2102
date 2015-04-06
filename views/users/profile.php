@@ -77,7 +77,7 @@
 						<div class="col-sm-6 col-xs-12">
 						<?php	
 						if ($exists)
-							echo '<input type="text" class="form-control" name="passenger-passport" id="pass-container" value="'.$value['passport'].'" readonly>';
+							echo '<input type="text" class="form-control" name="passenger-passport" id="pass-container" value="'.$value['passport'].'">';
 						else
 							echo '<input type="text" class="form-control" name="passenger-passport" id="pass-container">';
 						?>
