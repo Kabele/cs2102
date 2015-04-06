@@ -66,7 +66,7 @@
 	        $email = $_SESSION["logged"];
 
 	        $sql = "SELECT p.first_name, p.last_name, p.self, p.phone, p.passport, p.country, p.diet
-	            FROM passenger p WHERE p.user_email ='".$email."';";
+	            FROM passenger p WHERE p.self = '0' AND p.user_email ='".$email."';";
 
 	          $res = $db->query($sql);
 
