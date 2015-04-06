@@ -71,6 +71,14 @@ $sql = "CREATE TABLE booking_passenger ( flight_id VARCHAR(16),
 
 $db->query($sql);
 
+$sql = "CREATE VIEW latest_flights AS 
+  SELECT flight_id, departure, arrival, price, departure_date, departure_time 
+  FROM flight 
+  ORDER BY departure_date DESC, departure_time DESC
+  LIMIT 5";
+
+$db->query($sql);
+
 //////////////////////////////////////////////////////////////////////////////////////// Adding Seed Values for Testing
 
 
