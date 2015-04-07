@@ -104,7 +104,7 @@
 							Departing from 
 							<span class="lead"><?php echo $row['departure'] ?></span>
 							on 
-							<span class="lead"><?php echo $row['departure_date'] ?></span>
+							<span class="lead depdate"><?php echo $row['departure_date'] ?></span>
 							at 
 							<span class="lead">8:30 AM</span>
 							<br>
