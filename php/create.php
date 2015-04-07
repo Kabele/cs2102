@@ -75,7 +75,15 @@ $sql = "CREATE VIEW latest_flights AS
   SELECT flight_id, departure, arrival, price, departure_date, departure_time 
   FROM flight 
   ORDER BY departure_date DESC, departure_time DESC
-  LIMIT 5";
+  LIMIT 3";
+
+$db->query($sql);
+
+$sql = "CREATE VIEW cheapest_flights AS 
+  SELECT flight_id, departure, arrival, price
+  FROM flight 
+  ORDER BY price ASC
+  LIMIT 3";
 
 $db->query($sql);
 
