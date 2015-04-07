@@ -52,7 +52,7 @@ function timedMsg() {
 
 function init() {
     currMsg = -1;
-    msgArr = Array('This is sentence one', 'This is sentence two', 'This is sentence three', 'This is sentence four');
+    msgArr = Array('Cheapest flights guaranteed', 'Direct flights only', 'Hassle-free one-click bookings', 'Super-easy payments');
     timedMsg();
     var t=setInterval("timedMsg()",4000);
 };
