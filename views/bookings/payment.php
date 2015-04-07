@@ -67,23 +67,49 @@
 				'booking_time, '.
 				'total_price, '.
 				'user_email) VALUES('.
-				'"%s", "%s", %s, "%s", "%s")';
+				'"%s", "%s", "%s", "%s", "%s");';
+			$bking_psngers_sql_template = 'INSERT INTO booking_passenger ('.
+				'flight_id, '.
+				'departure_date, '.
+				'booking_time, '.
+				'user_email, '.
+				'passport) VALUES('.
+				'"%s", "%s", "%s", "%s", "%s");';
+			date_default_timezone_set("Asia/Singapore");
+			$now = date('Y-m-d H:i:s');
 			$forward_booking = sprintf($booking_sql_template,
 				$_GET['forward'],
 				$_GET['fdate'],
-				"now()",
+				"$now",
 				$forward['price'],
 				$_SESSION['logged']);
+			$db->query($forward_booking);
+			foreach ($_GET['passenger'] as $passenger) {
+				$fb_passengers = sprintf($bking_psngers_sql_template,
+					$_GET['forward'],
+					$_GET['fdate'],
+					"$now",
+					$_SESSION['logged'],
+					$passenger);
+				$db->query($fb_passengers);
+			}
 			$return_booking = sprintf($booking_sql_template,
 				$_GET['backward'],
 				$_GET['bdate'],
-				"now()",
+				"$now",
 				$return['price'],
 				$_SESSION['logged']);
-			print_r($forward_booking);
-			print_r($return_booking);
-			print_r($db->query($forward_booking));
-			print_r($db->query($return_booking));
+			// print_r($forward_booking);
+			$db->query($return_booking);
+			foreach ($_GET['passenger'] as $passenger) {
+				$rb_passengers = sprintf($bking_psngers_sql_template,
+					$_GET['backward'],
+					$_GET['bdate'],
+					"$now",
+					$_SESSION['logged'],
+					$passenger);
+				$db->query($rb_passengers);
+			}
 			?>
 			<div class="row">
 				<div class="col-xs-6">
