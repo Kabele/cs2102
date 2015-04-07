@@ -59,21 +59,38 @@
 			if($_GET['backward'] != ""){
 				$total_fee += $return['price'];
 			}
+
+			//insert into booking
+			$booking_sql_template = 'INSERT INTO booking ('.
+				'flight_id, '.
+				'departure_date, '.
+				'booking_time, '.
+				'total_price, '.
+				'user_email) VALUES('.
+				'"%s", "%s", %s, "%s", "%s")';
+			$forward_booking = sprintf($booking_sql_template,
+				$_GET['forward'],
+				$_GET['fdate'],
+				"now()",
+				$forward['price'],
+				$_SESSION['logged']);
+			$return_booking = sprintf($booking_sql_template,
+				$_GET['backward'],
+				$_GET['bdate'],
+				"now()",
+				$return['price'],
+				$_SESSION['logged']);
+			print_r($forward_booking);
+			print_r($return_booking);
+			print_r($db->query($forward_booking));
+			print_r($db->query($return_booking));
 			?>
-			<div class="row">
-				<div class="col-xs-6">
-					<p class="text-right">Discount Airlines Booking Fee</p>
-				</div>
-				<div class="col-xs-6">
-					<p class="text-left"><strong>S$ <?php echo $total_fee/10 ?></strong></p>
-				</div>
-			</div>
 			<div class="row">
 				<div class="col-xs-6">
 					<p class="text-right"><strong>Total</strong></p>
 				</div>
 				<div class="col-xs-6">
-					<p class="text-left"><strong>S$ <?php echo $total_fee + $total_fee/10; ?></strong></p>
+					<p class="text-left"><strong>S$ <?php echo $total_fee; ?></strong></p>
 				</div>
 			</div>
 			<div class="row">
