@@ -19,7 +19,7 @@
 		</div>
 		<div class="row">
 			<div class="col-xs-12">
-				<ul class="list-group">
+				<ul class="list-group passengers">
 					<?php 
 					require_once $path.'/php/connect.php';
 					$forward_sql = sprintf('SELECT '.
@@ -52,11 +52,11 @@
 					?>
 					<?php $passenger_counter = $_GET['adults'];
 					while($passenger_counter > 0){ $passenger_counter--;?>
-					<li class="list-group-item">
+					<li class="list-group-item passenger">
 						<div class="row">
 							<div class="col-xs-6"><strong>Passenger #1: </strong></div>
 							<div class="col-xs-6 pull-right">
-								<select class="form-control" name="" id="">
+								<select class="form-control passport" name="" id="">
 									<?php mysqli_data_seek($passengers, 0); ?>
 									<?php while($passenger = mysqli_fetch_assoc($passengers)) {?>
 									<option value="<?php echo $passenger['passport'] ?>">
@@ -129,10 +129,25 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-12"><a href="payment.php" class="btn btn-primary pull-right">
+			<?php 
+			$payment_url = "payment.php?forward=".$_GET['forward'].
+			 	"&fdate=".$_GET['fdate'].
+			 	"&backward=".$_GET['backward'].
+			 	"&bdate=".$_GET['bdate'];
+			?>
+			<div class="col-xs-12"><a href="#" class="btn btn-primary pull-right" id="next">
 				Proceed To Payment
 			</a></div>
 		</div>
 	</div>
+<script>
+	$('#next').click(function(){
+		var paymentUrl = "<?php echo $payment_url ?>";
+		$('.passengers .passenger .passport').each(function(){
+			paymentUrl += '&passenger[]=' + $(this).val().trim();
+		});
+		location.href = paymentUrl;
+	});
+</script>
 </body>
 </html>
