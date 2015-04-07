@@ -43,6 +43,7 @@ $db->query($sql);
 $sql = "CREATE TABLE booking ( flight_id VARCHAR(16),
   departure_date  DATE,
   booking_time TIME,
+  total_price INTEGER,
   FOREIGN KEY(flight_id, departure_date) REFERENCES flight(flight_id, departure_date),
   user_email VARCHAR(64) REFERENCES website_user(email) ON DELETE CASCADE ON UPDATE CASCADE,
   PRIMARY KEY (flight_id, departure_date, user_email, booking_time));";
