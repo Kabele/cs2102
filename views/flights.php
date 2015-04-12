@@ -37,7 +37,7 @@
                     echo '<li>Departing from <strong>'.$row['departure'].'</strong> on <strong>'.$row['departure_date'].'</strong> at <strong>'.$row['departure_time'].'</strong></li>';
                     echo '<li>Arriving at <strong>'.$row['arrival'].'</strong> on <strong>'.$row['arrival_date'].'</strong> at <strong>'.$row['arrival_time'].'</strong></li>';
                     echo '<li>Ticket Price: <strong>'.$row['price'].'</strong></li>';
-                    echo '<li>Total Capacity of <strong>'.$row['passenger_limit'].'</strong> passengers (<strong>198</strong> booked so far)</li>';
+                    echo '<li>Total Capacity of <strong>'.$row['passenger_limit'].'</strong> </li>';
                     echo '<li>Last Edited by <em>'.$row['status_changed_by'].'</em></li>';
                   echo '</ul>';
                 echo '</p>';
