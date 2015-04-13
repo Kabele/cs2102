@@ -49,31 +49,6 @@
 										<li>Arriving at <strong><?php echo $row['arrival']; ?></strong> on <strong><?php echo $row['arrival_date']; ?></strong> at <strong><?php echo $row['arrival_time']; ?></strong></li>
 										<li>Total Cost: <strong>S$<?php echo $row['price']; ?></strong></li>
 										<li>Weight Limit per Passenger: <strong>20 KG / 7 KG</strong></li>
-										<li>
-											Passengers
-											<ul class="passengers">
-
-												<?php 
-													$sql_forward = sprintf('SELECT '.
-														'p.name '.
-												    'FROM booking b, passenger p, booking_passenger bp '.
-												    'WHERE  '.
-												    'bp.flight_id = b.flight_id AND bp.departure_date = b.departure_date AND bp.passport = p.passport'.
-												    'AND bp.user_email = %s AND bp.departure_date = %s AND bp.flight_id = %s;',
-												    '"'.$_SESSION['logged'].'"', '"'.$row['departure_date'].'"', '"'.$row['flight_id'].'"');
-													$res2 = $db->query($sql_forward);
-													if(!$res2 || $res2->num_rows == 0) {
-													}
-													else {
-
-													while ($row2 = mysqli_fetch_assoc($res2)) {
-
-												?>
-
-												<li><?php echo $row2['name']; ?></li>
-												<?php } }?>
-											</ul>
-										</li>
 									</ul>
 								</p>
 							</div>
