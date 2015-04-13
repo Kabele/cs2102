@@ -76,7 +76,14 @@
 								</p>
 							</div>
 							<div class="col-xs-4">
-								<a href="" class="btn btn-danger pull-right">Cancel</a>
+								<?php 
+								$departure_date = $row['departure_date'];
+								$flight_id = $row['flight_id'];
+								$user_email = $_SESSION['logged'];
+								$booking_time = $row['booking_time'];
+								$delete_url = "/views/users/delete_booking.php?departure_date=$departure_date&flight_id=$flight_id&user_email=$user_email&booking_time=$booking_time";
+								?>
+								<a href="<?php echo $delete_url ?>" class="btn btn-danger pull-right">Cancel</a>
 							</div>
 						</div>
 					</li>
