@@ -25,6 +25,6 @@ $sql = "UPDATE flight SET departure = '".$departure."', arrival = '".$arrival."'
 
 $db->query($sql);
 
-?>
+header('Location:' . "/views/flights.php" );
 
-<?php header('Location:' . "/views/flights.php" ); ?>      
+?>   

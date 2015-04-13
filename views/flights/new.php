@@ -24,7 +24,6 @@ $sql = "INSERT INTO flight VALUES('".$flight_id."', '".$departure."', '".$arriva
 	$status_changed_by."', '".$price."', '".$airline_code."');";
 
 $db->query($sql);
-?>
 
-
-<?php header('Location:' . "/views/flights.php" ); ?>      
+header('Location:' . "/views/flights.php" );
+?>  
