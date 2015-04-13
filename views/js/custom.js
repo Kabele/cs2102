@@ -1,5 +1,5 @@
 // Countries
-var country_arr = new Array("Afghanistan", "Albania", "Algeria", "American Samoa", "Angola", "Anguilla", "Antartica");
+var country_arr = new Array("Afghanistan", "Albania", "Algeria", "American Samoa", "Angola", "Anguilla", "Antartica", "Mumbai", "Singapore");
 
 function populateCountries(countryElementId) {
     // given the id of the <select> tag as function argument, it inserts <option> tags
