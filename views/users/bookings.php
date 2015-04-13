@@ -44,41 +44,14 @@
 								<span class="badge"><?php echo $row['status']; ?></span>
 								<p>
 									<ul>
-<<<<<<< HEAD
 										<li>Departing from <strong><?php echo $row['departure']; ?></strong> on <strong><?php echo $row['departure_date']; ?></strong> at <strong><?php echo $row['departure_time']; ?></strong></li>
 										<li>Arriving at <strong><?php echo $row['arrival']; ?></strong> on <strong><?php echo $row['arrival_date']; ?></strong> at <strong><?php echo $row['arrival_time']; ?></strong></li>
 										<li>Total Cost: <strong>S$<?php echo $row['price']; ?></strong></li>
 										<li>Weight Limit per Passenger: <strong>20 KG / 7 KG</strong></li>
-=======
 										<li>Departing from <strong><?php echo $row['departure']; ?></strong> on <strong><?php echo $row['departure_date'] ?></strong> at <strong><?php echo $row['departure_time'] ?></strong></li>
 										<li>Arriving at <strong><?php echo $row['arrival'] ?></strong> on <strong><?php echo $row['arrival_date'] ?></strong> at <strong><?php echo $row['arrival_time'] ?></strong></li>
 										<li>Total Cost: <strong>S$ <?php echo $row['price'] ?></strong></li>
-										<li>
-											Passengers
-											<ul class="passengers">
-												<?php 
-												$sqlps = sprintf('SELECT '.
-													'p.first_name, '.
-													'p.last_name '.
-													'FROM passenger p, booking_passenger bp '.
-													'WHERE bp.departure_date = "%s" '.
-													'AND bp.flight_id = "%s" '.
-													'AND bp.booking_time = "%s" '.
-													'AND bp.user_email = "%s" '.
-													'AND bp.passport = p.passport; ',
-													$row['departure_date'],
-													$row['flight_id'], 
-													$row['booking_time'],
-													$_SESSION['logged']
-												);
-												$res2 = $db->query($sqlps);
-												while($res2 && $row2 = mysqli_fetch_assoc($res2)){
-												?>
-												<li><?php echo $row2['first_name'].' '.$row2['last_name']; ?></li>
-												<?php } ?>
-											</ul>
-										</li>
->>>>>>> dc89b83f2f85003c62814e1515e269504d73cb68
+										
 									</ul>
 								</p>
 							</div>
