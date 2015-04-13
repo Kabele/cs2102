@@ -63,7 +63,6 @@
 										<?php echo $passenger['first_name']." ".$passenger['last_name'] ?>
 									</option>
 									<?php } ?>
-									<option value="">New Passenger..</option>
 								</select>	
 							</div>
 						</div>
