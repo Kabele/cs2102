@@ -45,11 +45,9 @@
               <br>
               <br>
               <p style="margin-left: 20px; display: inline">ADULT</p> &nbsp;
-              <p style="margin-left: 20px; display: inline">CHILD</p>
               <p id="people" style="color: red; display: inline;"></p>
               <br>
               <select id="noofadult" name="noofadults" style="margin-left: 20px; color: black;"></select>
-              <select id="noofchild" name="noofchildren" style="margin-left: 40px; color: black;"></select>
               <br>
               <br>
               <button style="margin-left: 20px;" onclick="checkInput()" class="searchButton" type="button">Search</button>
@@ -124,7 +122,6 @@
       populatedropdown("departuredaydropdown", "departuremonthdropdown", "departureyeardropdown");
       populatedropdown("returndaydropdown", "returnmonthdropdown", "returnyeardropdown");
       populatePassengers("noofadult");
-      populatePassengers("noofchild");
   </script>
 </body>
 </html>

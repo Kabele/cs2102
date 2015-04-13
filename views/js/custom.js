@@ -99,9 +99,8 @@ function checkInput() {
     }
 
     var adult = document.getElementById("noofadult").value;
-    var child = document.getElementById("noofchild").value;
 
-    if (adult == 0 && child == 0) {
+    if (adult == 0) {
         document.getElementById("people").innerHTML = " (How many people?)";
         everythingOk = 0;
     } else {document.getElementById("people").innerHTML = "";}
